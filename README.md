@@ -28,9 +28,12 @@
 
 ## For migration copy terminal those scripts and invoke it.
 
-npm run typeorm:migration:generate -d src/migrations
-migration run: npx typeorm migration:run -d ./dist/appDataSource.js
-
+```bash
+# generate migration
+$ npm run typeorm:migration:generate -d src/migrations
+# run migration
+$ migration run: npx typeorm migration:run -d ./dist/appDataSource.js
+```
 
 ## Installation
 
