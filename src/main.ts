@@ -1,5 +1,5 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { DocumentBuilder, SwaggerModule } from '@neStjs/swagger';
 import { AppModule } from './app.module';
 import { AllExceptionFilter } from './libs/exceptionHandler/all-exception.filter';
 
@@ -16,7 +16,7 @@ async function bootstrap() {
   .addTag('Api v1 Endpoints')
   .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('/', app, document);
+  SwaggerModule.setup('/documents', app, document);
   await app.listen(3000);
 }
 bootstrap();
