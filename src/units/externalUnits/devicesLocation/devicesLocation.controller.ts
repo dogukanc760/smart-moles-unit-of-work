@@ -24,6 +24,11 @@ export class DevicesLocationController {
     return this.deviceLocationService.getAllDevicesLocations();
   }
 
+  @Get(':id')
+  public async get(@Param('id') id: string): Promise<DevicesLocationDTO> {
+    return this.deviceLocationService.getOneDeviceLocation(id);
+  }
+
   @Post()
   public async create(
     @Body() dto: DevicesLocationDTO,

@@ -39,7 +39,7 @@ export class ConfigService {
       username: 'postgres',//this.getValue('POSTGRES_USER'),
       password: '1234',//this.getValue('POSTGRES_PASSWORD'),
       database: 'SMUnitWork',//this.getValue('POSTGRES_DATABASE'),
-      synchronize: true,
+      synchronize: false,
       entities: ['dist/**/*.entity{*.ts,*.js}'],
 
       migrationsTableName: 'migrations',
