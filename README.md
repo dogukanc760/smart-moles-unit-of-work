@@ -33,7 +33,7 @@
 $ npm run typeorm:migration:generate -d src/migrations
 # run migration
 $ migration run: npx typeorm migration:run -d ./dist/appDataSource.js
-
+```
 
 ## Installation
 
