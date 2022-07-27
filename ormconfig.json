@@ -1,0 +1,17 @@
+{
+  "type": "postgres",
+  "host": "127.0.0.1",
+  "port": 5432,
+  "username": "postgres",
+  "password": "1234",
+  "database": "SMUnitWork",
+  "synchronize": true,
+  "entities": [
+    "dist/**/*.entity{*.ts,*.js}"
+  ],
+  "migrationsTableName": "migrations",
+  "migrations": [
+    "src/migrations/*.ts"
+  ],
+  "ssl": false
+}
