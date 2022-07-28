@@ -1,3 +1,4 @@
+import { GatewayFieldsModule } from './units/gateway/gatewayFields/gatewayFields.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -10,16 +11,26 @@ import { IrrigationTypesModule } from './units/externalUnits/irrigationTypes/irr
 import { ModemImeiRecordsModule } from './units/externalUnits/modemImeriRecords/modemImeiRecords.module';
 import { PlantsModule } from './units/externalUnits/plants/plants.module';
 import { SimCardsModule } from './units/externalUnits/simCards/simCards.module';
+import { GatewayModule } from './units/gateway/gateway.module';
+import { GatewayKhasConditionsModule } from './units/gateway/gatewayKhasConditions/gatewayKhasConditions.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    
+    //External Units
     DevicesLocationModule,
     DeviceTypesModule,
     IrrigationTypesModule,
     ModemImeiRecordsModule,
     PlantsModule,
-    SimCardsModule
+    SimCardsModule,
+
+    //Gateways 
+    GatewayModule,
+    GatewayFieldsModule,
+    GatewayKhasConditionsModule
+
   ],
   controllers: [AppController],
   providers: [AppService],

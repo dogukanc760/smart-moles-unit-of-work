@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { exec } from 'child_process';
 
 import { AppService } from './app.service';
 
@@ -12,9 +13,15 @@ export class AppController {
   }
 
   @Get('setup')
-  setup(): string {
-   
-    return this.appService.getHello();
+  async setup(): Promise<string> {
+    exec("npm run typeorm:migration:generate -d src/migrations")
+    return this.appService.setupFinish();
+  }
+
+  @Get('install')
+  async install(): Promise<string> {
+    //await exec("migration run: npx typeorm migration:run -d ./dist/appDataSource.js")
+    return this.appService.installFinish();
   }
 }
 
