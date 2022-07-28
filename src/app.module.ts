@@ -13,6 +13,8 @@ import { PlantsModule } from './units/externalUnits/plants/plants.module';
 import { SimCardsModule } from './units/externalUnits/simCards/simCards.module';
 import { GatewayModule } from './units/gateway/gateway.module';
 import { GatewayKhasConditionsModule } from './units/gateway/gatewayKhasConditions/gatewayKhasConditions.module';
+import { GatewayLogsModule } from './units/gateway/gatewayLogs/gatewayLogs.module';
+import { GatewayMoistureConditionsModule } from './units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.module';
 
 @Module({
   imports: [
@@ -29,7 +31,9 @@ import { GatewayKhasConditionsModule } from './units/gateway/gatewayKhasConditio
     //Gateways 
     GatewayModule,
     GatewayFieldsModule,
-    GatewayKhasConditionsModule
+    GatewayKhasConditionsModule,
+    GatewayLogsModule,
+    GatewayMoistureConditionsModule
 
   ],
   controllers: [AppController],
