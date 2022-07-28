@@ -25,7 +25,8 @@ import {
         map((data) => ({
           statusCode: context.switchToHttp().getResponse().statusCode,
           reqId: context.switchToHttp().getRequest().reqId,
-          message: data.message || '',
+          //message: data.message || '',
+          message:context.switchToHttp().getResponse().statusCode<202?'Success':context.switchToHttp().getResponse().statusCode<400?'Redirected':'Process Failed',
           data: data,
         })),
       );

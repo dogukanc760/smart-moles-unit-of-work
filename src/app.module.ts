@@ -8,6 +8,8 @@ import { DevicesLocationModule } from './units/externalUnits/devicesLocation/dev
 import { DeviceTypesModule } from './units/externalUnits/devicesTypes/devicesTypes.module';
 import { IrrigationTypesModule } from './units/externalUnits/irrigationTypes/irrigationTypes.module';
 import { ModemImeiRecordsModule } from './units/externalUnits/modemImeriRecords/modemImeiRecords.module';
+import { PlantsModule } from './units/externalUnits/plants/plants.module';
+import { SimCardsModule } from './units/externalUnits/simCards/simCards.module';
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { ModemImeiRecordsModule } from './units/externalUnits/modemImeriRecords/
     DevicesLocationModule,
     DeviceTypesModule,
     IrrigationTypesModule,
-    ModemImeiRecordsModule
+    ModemImeiRecordsModule,
+    PlantsModule,
+    SimCardsModule
   ],
   controllers: [AppController],
   providers: [AppService],
