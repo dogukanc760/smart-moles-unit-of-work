@@ -21,6 +21,7 @@ import { SmartRootDetailSecondModule } from './units/smartRoot/smartRootDetailSe
 import { WorkGroupModule } from './units/workGroup/workGroup/workGroup.module';
 import { WorkGroupLogsModule } from './units/workGroup/workGroupLogs/workGroupsLog.module';
 import { ManuelValveStrategiesModule } from './units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.module';
+import { PumpManagementTypesModule } from './units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.module';
 
 @Module({
   imports: [
@@ -49,7 +50,8 @@ import { ManuelValveStrategiesModule } from './units/workGroup/sensors/manuelVal
     //Work Groups
     WorkGroupModule,
     WorkGroupLogsModule,
-    ManuelValveStrategiesModule
+    ManuelValveStrategiesModule,
+    PumpManagementTypesModule
 
   ],
   controllers: [AppController],
