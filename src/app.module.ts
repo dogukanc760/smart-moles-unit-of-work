@@ -15,6 +15,9 @@ import { GatewayModule } from './units/gateway/gateway.module';
 import { GatewayKhasConditionsModule } from './units/gateway/gatewayKhasConditions/gatewayKhasConditions.module';
 import { GatewayLogsModule } from './units/gateway/gatewayLogs/gatewayLogs.module';
 import { GatewayMoistureConditionsModule } from './units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.module';
+import { SmartRootModule } from './units/smartRoot/smartRoot.module';
+import { SmartRootDetailFirstModule } from './units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.module';
+import { SmartRootDetailSecondModule } from './units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module';
 
 @Module({
   imports: [
@@ -33,7 +36,12 @@ import { GatewayMoistureConditionsModule } from './units/gateway/gatewayMoisture
     GatewayFieldsModule,
     GatewayKhasConditionsModule,
     GatewayLogsModule,
-    GatewayMoistureConditionsModule
+    GatewayMoistureConditionsModule,
+
+    //SmartRoot
+    SmartRootModule,
+    SmartRootDetailFirstModule,
+    SmartRootDetailSecondModule
 
   ],
   controllers: [AppController],

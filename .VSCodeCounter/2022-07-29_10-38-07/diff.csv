@@ -1,0 +1,15 @@
+"filename", "language", "TypeScript", "comment", "blank", "total"
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.module.ts", "TypeScript", 6, 1, 1, 8
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.controller.ts", "TypeScript", 47, 0, 11, 58
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.dto.ts", "TypeScript", 56, 0, 11, 67
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.module.ts", "TypeScript", 13, 0, 5, 18
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.service.ts", "TypeScript", 54, 4, 10, 68
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.controller.ts", "TypeScript", 47, 0, 12, 59
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.dto.ts", "TypeScript", 63, 0, 8, 71
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.module.ts", "TypeScript", 13, 0, 4, 17
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.service.ts", "TypeScript", 54, 4, 11, 69
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.controller.ts", "TypeScript", 47, 0, 12, 59
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.dto.ts", "TypeScript", 63, 0, 8, 71
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.module.ts", "TypeScript", 13, 0, 4, 17
+"d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.service.ts", "TypeScript", 54, 4, 11, 69
+"Total", "-", 530, 13, 108, 651
