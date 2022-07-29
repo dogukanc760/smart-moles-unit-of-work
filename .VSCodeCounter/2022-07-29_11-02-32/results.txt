@@ -1,13 +1,13 @@
-Date : 2022-07-28 17:34:48
+Date : 2022-07-29 11:02:32
 Directory : d:\Yeni-Sistemler\smart-moles-unit-of-work
-Total : 105 files,  18826 codes, 100 comments, 540 blanks, all 19466 lines
+Total : 117 files,  19356 codes, 113 comments, 648 blanks, all 20117 lines
 
 Languages
 +--------------------+------------+------------+------------+------------+------------+
 | language           | files      | code       | comment    | blank      | total      |
 +--------------------+------------+------------+------------+------------+------------+
 | JSON               |          7 |     15,332 |         11 |          3 |     15,346 |
-| TypeScript         |         95 |      3,389 |         87 |        512 |      3,988 |
+| TypeScript         |        107 |      3,919 |        100 |        620 |      4,639 |
 | Markdown           |          1 |         58 |          2 |         23 |         83 |
 | JavaScript         |          1 |         25 |          0 |          1 |         26 |
 | JSON with Comments |          1 |         22 |          0 |          1 |         23 |
@@ -17,8 +17,8 @@ Directories
 +--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                                                           | files      | code       | comment    | blank      | total      |
 +--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                                                              |        105 |     18,826 |        100 |        540 |     19,466 |
-| src                                                                                                                            |         93 |      3,362 |         87 |        502 |      3,951 |
+| .                                                                                                                              |        117 |     19,356 |        113 |        648 |     20,117 |
+| src                                                                                                                            |        105 |      3,892 |        100 |        610 |      4,602 |
 | src\config                                                                                                                     |          4 |         86 |         30 |         17 |        133 |
 | src\libs                                                                                                                       |          2 |         43 |          1 |          3 |         47 |
 | src\libs\api-results                                                                                                           |          1 |         31 |          1 |          2 |         34 |
@@ -32,7 +32,7 @@ Directories
 | src\model\WorkGroup\TimerManagement                                                                                            |          3 |         39 |          0 |          6 |         45 |
 | src\model\WorkGroup\ValveCards                                                                                                 |          4 |        102 |          0 |          8 |        110 |
 | src\scripts                                                                                                                    |          1 |          5 |          0 |          0 |          5 |
-| src\units                                                                                                                      |         44 |      2,092 |         44 |        339 |      2,475 |
+| src\units                                                                                                                      |         56 |      2,616 |         56 |        446 |      3,118 |
 | src\units\externalUnits                                                                                                        |         24 |      1,019 |         24 |        174 |      1,217 |
 | src\units\externalUnits\devicesLocation                                                                                        |          4 |        169 |          4 |         23 |        196 |
 | src\units\externalUnits\devicesTypes                                                                                           |          4 |        156 |          4 |         30 |        190 |
@@ -45,6 +45,9 @@ Directories
 | src\units\gateway\gatewayKhasConditions                                                                                        |          4 |        212 |          4 |         31 |        247 |
 | src\units\gateway\gatewayLogs                                                                                                  |          4 |        208 |          4 |         34 |        246 |
 | src\units\gateway\gatewayMoistureConditions                                                                                    |          4 |        214 |          4 |         32 |        250 |
+| src\units\smartRoot                                                                                                            |         12 |        524 |         12 |        107 |        643 |
+| src\units\smartRoot\smartRootDetailFirst                                                                                       |          4 |        177 |          4 |         35 |        216 |
+| src\units\smartRoot\smartRootDetailSecond                                                                                      |          4 |        177 |          4 |         35 |        216 |
 | test                                                                                                                           |          2 |         29 |          0 |          6 |         35 |
 +--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 
@@ -66,7 +69,7 @@ Files
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\1659010971674-migrations.ts                                                     | TypeScript         |        112 |          0 |          5 |        117 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.controller.spec.ts                                                          | TypeScript         |         18 |          0 |          5 |         23 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.controller.ts                                                               | TypeScript         |         20 |          1 |          7 |         28 |
-| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.module.ts                                                                   | TypeScript         |         35 |          2 |          6 |         43 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.module.ts                                                                   | TypeScript         |         41 |          3 |          7 |         51 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\app.service.ts                                                                  | TypeScript         |         13 |          0 |          4 |         17 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\config\config.service.ts                                                        | TypeScript         |         35 |         21 |         11 |         67 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\config\dataSource.service.ts                                                    | TypeScript         |         30 |          0 |          3 |         33 |
@@ -153,9 +156,21 @@ Files
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\gateway\gatewayMoistureConditions\gatewayMoistureConditions.dto.ts        | TypeScript         |         84 |          0 |         10 |         94 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\gateway\gatewayMoistureConditions\gatewayMoistureConditions.module.ts     | TypeScript         |         12 |          0 |          4 |         16 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\gateway\gatewayMoistureConditions\gatewayMoistureConditions.service.ts    | TypeScript         |         63 |          4 |         10 |         77 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.controller.ts                                         | TypeScript         |         47 |          0 |         11 |         58 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.dto.ts                                                | TypeScript         |         56 |          0 |         11 |         67 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.module.ts                                             | TypeScript         |         13 |          0 |          5 |         18 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRoot.service.ts                                            | TypeScript         |         54 |          4 |         10 |         68 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.controller.ts         | TypeScript         |         47 |          0 |         12 |         59 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.dto.ts                | TypeScript         |         63 |          0 |          8 |         71 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.module.ts             | TypeScript         |         13 |          0 |          4 |         17 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailFirst\smartRootDetailFirst.service.ts            | TypeScript         |         54 |          4 |         11 |         69 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.controller.ts       | TypeScript         |         47 |          0 |         12 |         59 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.dto.ts              | TypeScript         |         63 |          0 |          8 |         71 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.module.ts           | TypeScript         |         13 |          0 |          4 |         17 |
+| d:\Yeni-Sistemler\smart-moles-unit-of-work\src\units\smartRoot\smartRootDetailSecond\smartRootDetailSecond.service.ts          | TypeScript         |         54 |          4 |         11 |         69 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\test\app.e2e-spec.ts                                                                | TypeScript         |         20 |          0 |          5 |         25 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\test\jest-e2e.json                                                                  | JSON               |          9 |          0 |          1 |         10 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\tsconfig.build.json                                                                 | JSON               |          3 |          2 |          0 |          5 |
 | d:\Yeni-Sistemler\smart-moles-unit-of-work\tsconfig.json                                                                       | JSON with Comments |         22 |          0 |          1 |         23 |
-| Total                                                                                                                          |                    |     18,826 |        100 |        540 |     19,466 |
+| Total                                                                                                                          |                    |     19,356 |        113 |        648 |     20,117 |
 +--------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

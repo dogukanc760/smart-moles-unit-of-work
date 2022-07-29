@@ -8,7 +8,7 @@ async function bootstrap() {
   app.enableCors();
   const {httpAdapter} = app.get(HttpAdapterHost);
   app.useGlobalFilters(new AllExceptionFilter(httpAdapter));
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix('v1/api');
   const config = new DocumentBuilder()
   .setTitle('Smartmoles Cloud Services')
   .setDescription('For All Solutions')

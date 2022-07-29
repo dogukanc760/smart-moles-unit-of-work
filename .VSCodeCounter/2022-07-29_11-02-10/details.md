@@ -1,10 +1,10 @@
 # Details
 
-Date : 2022-07-28 17:34:48
+Date : 2022-07-29 11:02:10
 
 Directory d:\\Yeni-Sistemler\\smart-moles-unit-of-work
 
-Total : 105 files,  18826 codes, 100 comments, 540 blanks, all 19466 lines
+Total : 117 files,  19356 codes, 113 comments, 648 blanks, all 20117 lines
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -25,7 +25,7 @@ Total : 105 files,  18826 codes, 100 comments, 540 blanks, all 19466 lines
 | [src/1659010971674-migrations.ts](/src/1659010971674-migrations.ts) | TypeScript | 112 | 0 | 5 | 117 |
 | [src/app.controller.spec.ts](/src/app.controller.spec.ts) | TypeScript | 18 | 0 | 5 | 23 |
 | [src/app.controller.ts](/src/app.controller.ts) | TypeScript | 20 | 1 | 7 | 28 |
-| [src/app.module.ts](/src/app.module.ts) | TypeScript | 35 | 2 | 6 | 43 |
+| [src/app.module.ts](/src/app.module.ts) | TypeScript | 41 | 3 | 7 | 51 |
 | [src/app.service.ts](/src/app.service.ts) | TypeScript | 13 | 0 | 4 | 17 |
 | [src/config/config.service.ts](/src/config/config.service.ts) | TypeScript | 35 | 21 | 11 | 67 |
 | [src/config/dataSource.service.ts](/src/config/dataSource.service.ts) | TypeScript | 30 | 0 | 3 | 33 |
@@ -112,6 +112,18 @@ Total : 105 files,  18826 codes, 100 comments, 540 blanks, all 19466 lines
 | [src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.dto.ts](/src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.dto.ts) | TypeScript | 84 | 0 | 10 | 94 |
 | [src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.module.ts](/src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.module.ts) | TypeScript | 12 | 0 | 4 | 16 |
 | [src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.service.ts](/src/units/gateway/gatewayMoistureConditions/gatewayMoistureConditions.service.ts) | TypeScript | 63 | 4 | 10 | 77 |
+| [src/units/smartRoot/smartRoot.controller.ts](/src/units/smartRoot/smartRoot.controller.ts) | TypeScript | 47 | 0 | 11 | 58 |
+| [src/units/smartRoot/smartRoot.dto.ts](/src/units/smartRoot/smartRoot.dto.ts) | TypeScript | 56 | 0 | 11 | 67 |
+| [src/units/smartRoot/smartRoot.module.ts](/src/units/smartRoot/smartRoot.module.ts) | TypeScript | 13 | 0 | 5 | 18 |
+| [src/units/smartRoot/smartRoot.service.ts](/src/units/smartRoot/smartRoot.service.ts) | TypeScript | 54 | 4 | 10 | 68 |
+| [src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.controller.ts](/src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.controller.ts) | TypeScript | 47 | 0 | 12 | 59 |
+| [src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.dto.ts](/src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.dto.ts) | TypeScript | 63 | 0 | 8 | 71 |
+| [src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.module.ts](/src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.module.ts) | TypeScript | 13 | 0 | 4 | 17 |
+| [src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.service.ts](/src/units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.service.ts) | TypeScript | 54 | 4 | 11 | 69 |
+| [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.controller.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.controller.ts) | TypeScript | 47 | 0 | 12 | 59 |
+| [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.dto.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.dto.ts) | TypeScript | 63 | 0 | 8 | 71 |
+| [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module.ts) | TypeScript | 13 | 0 | 4 | 17 |
+| [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.service.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.service.ts) | TypeScript | 54 | 4 | 11 | 69 |
 | [test/app.e2e-spec.ts](/test/app.e2e-spec.ts) | TypeScript | 20 | 0 | 5 | 25 |
 | [test/jest-e2e.json](/test/jest-e2e.json) | JSON | 9 | 0 | 1 | 10 |
 | [tsconfig.build.json](/tsconfig.build.json) | JSON | 3 | 2 | 0 | 5 |

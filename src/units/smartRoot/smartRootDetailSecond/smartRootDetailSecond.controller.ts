@@ -15,7 +15,7 @@ import { SmartRootDetailSecondService } from './smartRootDetailSecond.service';
 
  
   
-  @Controller('smart-root-Second')
+  @Controller('smart-root-second')
   @ApiTags('Smart Root Detail Second Endpoints')
   @UseInterceptors(TransformInterceptor)
   export class SmartRootDetailSecondController {

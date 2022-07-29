@@ -18,6 +18,9 @@ import { GatewayMoistureConditionsModule } from './units/gateway/gatewayMoisture
 import { SmartRootModule } from './units/smartRoot/smartRoot.module';
 import { SmartRootDetailFirstModule } from './units/smartRoot/smartRootDetailFirst/smartRootDetailFirst.module';
 import { SmartRootDetailSecondModule } from './units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module';
+import { WorkGroupModule } from './units/workGroup/workGroup/workGroup.module';
+import { WorkGroupLogsModule } from './units/workGroup/workGroupLogs/workGroupsLog.module';
+import { ManuelValveStrategiesModule } from './units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.module';
 
 @Module({
   imports: [
@@ -38,10 +41,15 @@ import { SmartRootDetailSecondModule } from './units/smartRoot/smartRootDetailSe
     GatewayLogsModule,
     GatewayMoistureConditionsModule,
 
-    //SmartRoot
+    //SmartRoots
     SmartRootModule,
     SmartRootDetailFirstModule,
-    SmartRootDetailSecondModule
+    SmartRootDetailSecondModule,
+
+    //Work Groups
+    WorkGroupModule,
+    WorkGroupLogsModule,
+    ManuelValveStrategiesModule
 
   ],
   controllers: [AppController],
