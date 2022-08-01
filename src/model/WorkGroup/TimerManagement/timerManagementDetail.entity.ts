@@ -2,8 +2,8 @@ import { BaseEntity } from 'src/model/base.entity';
 import { LogBaseEntity } from 'src/model/logBase.entity';
 import {    Column, Entity } from 'typeorm';
 
-@Entity({ name: 'valveCards' })
-export class ValveCards extends BaseEntity {
+@Entity({ name: 'timerManagementDetail' })
+export class TimerManagementDetail extends BaseEntity {
   @Column({ type: 'varchar', length: 50 })
   TimerManagementID: string;
   @Column({ type: 'varchar', length: 50 })

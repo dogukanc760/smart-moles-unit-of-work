@@ -26,6 +26,10 @@ import { SensorCalibrationLogModule } from './units/workGroup/sensors/sensorCali
 import { SensorCardLogsModule } from './units/workGroup/sensors/sensorCardLogs/sensorCardLogs.Module';
 import { SensorCardParamsModule } from './units/workGroup/sensors/sensorCardParams/sensorCardParams.module';
 import { SensorCardsModule } from './units/workGroup/sensors/sensorCards/sensorCards.module';
+import { SensorMoistureLogModule } from './units/workGroup/sensors/sensorMoistureLogs/sensorMoistureLog.module';
+import { TimerManagementModule } from './units/workGroup/timerManagement/timerManagement/timerManagement.module';
+import { TimerManagementDetailModule } from './units/workGroup/timerManagement/timerManagementDetail/timerManagementDetail.module';
+import { TimerManagementLogsModule } from './units/workGroup/timerManagement/timerManagementLogs/timerManagementLogs.module';
 
 @Module({
   imports: [
@@ -59,7 +63,11 @@ import { SensorCardsModule } from './units/workGroup/sensors/sensorCards/sensorC
     SensorCalibrationLogModule,
     SensorCardLogsModule,
     SensorCardParamsModule,
-    SensorCardsModule
+    SensorCardsModule,
+    SensorMoistureLogModule,
+    TimerManagementModule,
+    TimerManagementDetailModule,
+    TimerManagementLogsModule
 
   ],
   controllers: [AppController],

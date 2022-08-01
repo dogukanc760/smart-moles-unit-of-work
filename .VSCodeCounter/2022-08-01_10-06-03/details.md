@@ -1,10 +1,10 @@
 # Details
 
-Date : 2022-07-29 10:38:25
+Date : 2022-08-01 10:06:03
 
 Directory d:\\Yeni-Sistemler\\smart-moles-unit-of-work
 
-Total : 117 files,  19356 codes, 113 comments, 648 blanks, all 20117 lines
+Total : 149 files,  21174 codes, 146 comments, 966 blanks, all 22286 lines
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -25,7 +25,7 @@ Total : 117 files,  19356 codes, 113 comments, 648 blanks, all 20117 lines
 | [src/1659010971674-migrations.ts](/src/1659010971674-migrations.ts) | TypeScript | 112 | 0 | 5 | 117 |
 | [src/app.controller.spec.ts](/src/app.controller.spec.ts) | TypeScript | 18 | 0 | 5 | 23 |
 | [src/app.controller.ts](/src/app.controller.ts) | TypeScript | 20 | 1 | 7 | 28 |
-| [src/app.module.ts](/src/app.module.ts) | TypeScript | 41 | 3 | 7 | 51 |
+| [src/app.module.ts](/src/app.module.ts) | TypeScript | 57 | 4 | 8 | 69 |
 | [src/app.service.ts](/src/app.service.ts) | TypeScript | 13 | 0 | 4 | 17 |
 | [src/config/config.service.ts](/src/config/config.service.ts) | TypeScript | 35 | 21 | 11 | 67 |
 | [src/config/dataSource.service.ts](/src/config/dataSource.service.ts) | TypeScript | 30 | 0 | 3 | 33 |
@@ -124,6 +124,38 @@ Total : 117 files,  19356 codes, 113 comments, 648 blanks, all 20117 lines
 | [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.dto.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.dto.ts) | TypeScript | 63 | 0 | 8 | 71 |
 | [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.module.ts) | TypeScript | 13 | 0 | 4 | 17 |
 | [src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.service.ts](/src/units/smartRoot/smartRootDetailSecond/smartRootDetailSecond.service.ts) | TypeScript | 54 | 4 | 11 | 69 |
+| [src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.controller.ts](/src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.controller.ts) | TypeScript | 56 | 0 | 10 | 66 |
+| [src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.dto.ts](/src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.dto.ts) | TypeScript | 77 | 0 | 10 | 87 |
+| [src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.module.ts](/src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.module.ts) | TypeScript | 12 | 0 | 5 | 17 |
+| [src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.service.ts](/src/units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.service.ts) | TypeScript | 64 | 4 | 12 | 80 |
+| [src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.controller.ts](/src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.controller.ts) | TypeScript | 49 | 0 | 12 | 61 |
+| [src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.dto.ts](/src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.dto.ts) | TypeScript | 60 | 0 | 12 | 72 |
+| [src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.module.ts](/src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.module.ts) | TypeScript | 12 | 0 | 4 | 16 |
+| [src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.service.ts](/src/units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.service.ts) | TypeScript | 56 | 4 | 14 | 74 |
+| [src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.controller.ts](/src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.controller.ts) | TypeScript | 55 | 0 | 11 | 66 |
+| [src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.dto.ts](/src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.dto.ts) | TypeScript | 67 | 0 | 11 | 78 |
+| [src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.module.ts](/src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.module.ts) | TypeScript | 12 | 0 | 5 | 17 |
+| [src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.service.ts](/src/units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.service.ts) | TypeScript | 63 | 4 | 14 | 81 |
+| [src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.Module.ts](/src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.Module.ts) | TypeScript | 12 | 0 | 3 | 15 |
+| [src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.controller.ts](/src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.controller.ts) | TypeScript | 55 | 0 | 10 | 65 |
+| [src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.dto.ts](/src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.dto.ts) | TypeScript | 50 | 0 | 15 | 65 |
+| [src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.service.ts](/src/units/workGroup/sensors/sensorCardLogs/sensorCardLogs.service.ts) | TypeScript | 63 | 4 | 14 | 81 |
+| [src/units/workGroup/sensors/sensorCardParams/sensorCardParams.controller.ts](/src/units/workGroup/sensors/sensorCardParams/sensorCardParams.controller.ts) | TypeScript | 55 | 0 | 11 | 66 |
+| [src/units/workGroup/sensors/sensorCardParams/sensorCardParams.dto.ts](/src/units/workGroup/sensors/sensorCardParams/sensorCardParams.dto.ts) | TypeScript | 289 | 0 | 7 | 296 |
+| [src/units/workGroup/sensors/sensorCardParams/sensorCardParams.module.ts](/src/units/workGroup/sensors/sensorCardParams/sensorCardParams.module.ts) | TypeScript | 13 | 0 | 4 | 17 |
+| [src/units/workGroup/sensors/sensorCardParams/sensorCardParams.service.ts](/src/units/workGroup/sensors/sensorCardParams/sensorCardParams.service.ts) | TypeScript | 63 | 4 | 14 | 81 |
+| [src/units/workGroup/sensors/sensorCards/sensorCards.controller.ts](/src/units/workGroup/sensors/sensorCards/sensorCards.controller.ts) | TypeScript | 55 | 0 | 11 | 66 |
+| [src/units/workGroup/sensors/sensorCards/sensorCards.dto.ts](/src/units/workGroup/sensors/sensorCards/sensorCards.dto.ts) | TypeScript | 99 | 0 | 13 | 112 |
+| [src/units/workGroup/sensors/sensorCards/sensorCards.module.ts](/src/units/workGroup/sensors/sensorCards/sensorCards.module.ts) | TypeScript | 12 | 0 | 3 | 15 |
+| [src/units/workGroup/sensors/sensorCards/sensorCards.service.ts](/src/units/workGroup/sensors/sensorCards/sensorCards.service.ts) | TypeScript | 63 | 4 | 15 | 82 |
+| [src/units/workGroup/workGroupLogs/workGroupsLog.controller.ts](/src/units/workGroup/workGroupLogs/workGroupsLog.controller.ts) | TypeScript | 55 | 0 | 10 | 65 |
+| [src/units/workGroup/workGroupLogs/workGroupsLog.dto.ts](/src/units/workGroup/workGroupLogs/workGroupsLog.dto.ts) | TypeScript | 76 | 0 | 8 | 84 |
+| [src/units/workGroup/workGroupLogs/workGroupsLog.module.ts](/src/units/workGroup/workGroupLogs/workGroupsLog.module.ts) | TypeScript | 14 | 0 | 7 | 21 |
+| [src/units/workGroup/workGroupLogs/workGroupsLog.service.ts](/src/units/workGroup/workGroupLogs/workGroupsLog.service.ts) | TypeScript | 63 | 4 | 13 | 80 |
+| [src/units/workGroup/workGroup/workGroup.controller.ts](/src/units/workGroup/workGroup/workGroup.controller.ts) | TypeScript | 47 | 0 | 12 | 59 |
+| [src/units/workGroup/workGroup/workGroup.dto.ts](/src/units/workGroup/workGroup/workGroup.dto.ts) | TypeScript | 68 | 0 | 10 | 78 |
+| [src/units/workGroup/workGroup/workGroup.module.ts](/src/units/workGroup/workGroup/workGroup.module.ts) | TypeScript | 13 | 0 | 6 | 19 |
+| [src/units/workGroup/workGroup/workGroup.service.ts](/src/units/workGroup/workGroup/workGroup.service.ts) | TypeScript | 54 | 4 | 11 | 69 |
 | [test/app.e2e-spec.ts](/test/app.e2e-spec.ts) | TypeScript | 20 | 0 | 5 | 25 |
 | [test/jest-e2e.json](/test/jest-e2e.json) | JSON | 9 | 0 | 1 | 10 |
 | [tsconfig.build.json](/tsconfig.build.json) | JSON | 3 | 2 | 0 | 5 |
