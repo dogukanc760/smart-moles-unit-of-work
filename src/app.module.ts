@@ -22,6 +22,10 @@ import { WorkGroupModule } from './units/workGroup/workGroup/workGroup.module';
 import { WorkGroupLogsModule } from './units/workGroup/workGroupLogs/workGroupsLog.module';
 import { ManuelValveStrategiesModule } from './units/workGroup/sensors/manuelValveStrategies/manuelValveStrategies.module';
 import { PumpManagementTypesModule } from './units/workGroup/sensors/pumpManagementTypes/pumpManagementTypes.module';
+import { SensorCalibrationLogModule } from './units/workGroup/sensors/sensorCalibrationLogs/sensorCalibrationLog.module';
+import { SensorCardLogsModule } from './units/workGroup/sensors/sensorCardLogs/sensorCardLogs.Module';
+import { SensorCardParamsModule } from './units/workGroup/sensors/sensorCardParams/sensorCardParams.module';
+import { SensorCardsModule } from './units/workGroup/sensors/sensorCards/sensorCards.module';
 
 @Module({
   imports: [
@@ -51,7 +55,11 @@ import { PumpManagementTypesModule } from './units/workGroup/sensors/pumpManagem
     WorkGroupModule,
     WorkGroupLogsModule,
     ManuelValveStrategiesModule,
-    PumpManagementTypesModule
+    PumpManagementTypesModule,
+    SensorCalibrationLogModule,
+    SensorCardLogsModule,
+    SensorCardParamsModule,
+    SensorCardsModule
 
   ],
   controllers: [AppController],
