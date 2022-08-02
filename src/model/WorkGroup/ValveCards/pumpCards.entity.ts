@@ -18,18 +18,19 @@ export class PumpCards extends BaseEntity {
   PressureSensor: boolean;
   @Column({ type: 'varchar', length: 50 })
   PressureUpLimit: string;
-  @Column({ type: 'boolean', default: false })
+  @Column({ type: 'varchar', default: false })
   PressureDownLimit: string;
   @Column({ type: 'varchar', length: 50 })
   ConnectPeriodWhenWork: string;
   @Column({ type: 'varchar', length: 50 })
   ConnectPeriodWhenStop: string;
+  
   @Column({ type: 'boolean', default: false })
-  WaterMeter: string;
+  WaterMeter: boolean;
   @Column({ type: 'varchar', length: 50 })
   LitrePulseCount: string;
   @Column({ type: 'boolean', default: false })
-  DigitalPump: string;
+  DigitalPump: boolean;
   @Column({ type: 'varchar', length: 50 })
   Description: string;
 }

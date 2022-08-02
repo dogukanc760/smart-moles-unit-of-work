@@ -30,6 +30,10 @@ import { SensorMoistureLogModule } from './units/workGroup/sensors/sensorMoistur
 import { TimerManagementModule } from './units/workGroup/timerManagement/timerManagement/timerManagement.module';
 import { TimerManagementDetailModule } from './units/workGroup/timerManagement/timerManagementDetail/timerManagementDetail.module';
 import { TimerManagementLogsModule } from './units/workGroup/timerManagement/timerManagementLogs/timerManagementLogs.module';
+import { PumpCardLogsModule } from './units/workGroup/valveCards/pumpCardLogs/pumpCardLogs.module';
+import { PumpCardsModule } from './units/workGroup/valveCards/pumpCards/pumpCards.module';
+import { ValveCardsModule } from './units/workGroup/valveCards/valveCards/valveCards.module';
+import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/valveCardLogs.module';
 
 @Module({
   imports: [
@@ -58,16 +62,30 @@ import { TimerManagementLogsModule } from './units/workGroup/timerManagement/tim
     //Work Groups
     WorkGroupModule,
     WorkGroupLogsModule,
+
+    //Management Types
     ManuelValveStrategiesModule,
     PumpManagementTypesModule,
+
+    //Sensor Components
     SensorCalibrationLogModule,
     SensorCardLogsModule,
     SensorCardParamsModule,
     SensorCardsModule,
     SensorMoistureLogModule,
+
+    //Timer Managements
     TimerManagementModule,
     TimerManagementDetailModule,
-    TimerManagementLogsModule
+    TimerManagementLogsModule,
+
+    //Pumps 
+    PumpCardLogsModule,
+    PumpCardsModule,
+
+    //Valves
+    ValveCardsModule,
+    ValveCardLogsModule
 
   ],
   controllers: [AppController],

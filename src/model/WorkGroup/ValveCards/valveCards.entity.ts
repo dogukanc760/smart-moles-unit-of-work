@@ -19,7 +19,7 @@ export class ValveCards extends BaseEntity {
   @Column({ type: 'varchar', length: 50 })
   PressureMax: string;
   @Column({ type: 'boolean', default: false })
-  WaterMeter: string;
+  WaterMeter: boolean;
   @Column({ type: 'varchar', length: 50 })
   ConnectPeriodWhenWork: string;
   @Column({ type: 'varchar', length: 50 })
