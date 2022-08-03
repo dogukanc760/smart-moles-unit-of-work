@@ -28,6 +28,7 @@ export function getConfig() {
         username: 'postgres',
         password: '1234',
         database: 'SMUnitWork',
+        migrations: ['src/migrations/*.ts'],
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
  } as DataSourceOptions; }

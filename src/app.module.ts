@@ -1,6 +1,7 @@
 import { GatewayFieldsModule } from './units/gateway/gatewayFields/gatewayFields.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { APP_GUARD } from '@nestjs/core';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -34,11 +35,16 @@ import { PumpCardLogsModule } from './units/workGroup/valveCards/pumpCardLogs/pu
 import { PumpCardsModule } from './units/workGroup/valveCards/pumpCards/pumpCards.module';
 import { ValveCardsModule } from './units/workGroup/valveCards/valveCards/valveCards.module';
 import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/valveCardLogs.module';
+import { UsersModule } from './units/users/users.module';
+
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
-    
+    //AuthModule,
+    //Users
+     UsersModule,
+
     //External Units
     DevicesLocationModule,
     DeviceTypesModule,
@@ -47,7 +53,7 @@ import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/
     PlantsModule,
     SimCardsModule,
 
-    //Gateways 
+    //Gateways
     GatewayModule,
     GatewayFieldsModule,
     GatewayKhasConditionsModule,
@@ -79,16 +85,19 @@ import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/
     TimerManagementDetailModule,
     TimerManagementLogsModule,
 
-    //Pumps 
+    //Pumps
     PumpCardLogsModule,
     PumpCardsModule,
 
     //Valves
     ValveCardsModule,
-    ValveCardLogsModule
-
+    ValveCardLogsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+
+  
+  ],
 })
 export class AppModule {}

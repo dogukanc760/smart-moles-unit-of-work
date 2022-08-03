@@ -6,10 +6,12 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { TransformInterceptor } from 'src/libs/api-results/standart-results';
+
 import { DevicesLocationDTO } from './devicesLocation.dto';
 import { DevicesLocationService } from './devicesLocation.service';
 

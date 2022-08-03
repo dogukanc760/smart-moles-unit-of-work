@@ -1,8 +1,10 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Res, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { exec } from 'child_process';
 
 import { AppService } from './app.service';
+
 
 @Controller()
 @ApiTags('Default Routes for Setup, Installation and Documents')
@@ -12,6 +14,12 @@ export class AppController {
   @Get()
   getHello(@Res() res): string {
     return res.redirect('/documents')
+  }
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('hello')
+  getHell(): string{
+    return this.appService.getHello()
   }
 
   @Get('setup')
