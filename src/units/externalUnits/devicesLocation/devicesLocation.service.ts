@@ -27,8 +27,8 @@ export class DevicesLocationService {
   // save new device
   public async create(dto: DevicesLocationDTO): Promise<DevicesLocationDTO> {
     return await this.repo
-      .save(DevicesLocationDTO.toEntity(dto))
-      .then((e) => DevicesLocationDTO.fromEntity(e));
+    .save(DevicesLocationDTO.toEntity(dto))
+    .then((e) => DevicesLocationDTO.fromEntity(e));
   }
 
   // update device

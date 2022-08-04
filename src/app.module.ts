@@ -36,14 +36,22 @@ import { PumpCardsModule } from './units/workGroup/valveCards/pumpCards/pumpCard
 import { ValveCardsModule } from './units/workGroup/valveCards/valveCards/valveCards.module';
 import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/valveCardLogs.module';
 import { UsersModule } from './units/users/users.module';
+import { MailModule } from './operations/mailer/mailer.module';
+import { MulterModule } from '@nestjs/platform-express';
 
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    MulterModule.register({
+      dest: './files'
+    }),
     //AuthModule,
     //Users
      UsersModule,
+
+    // Mailer
+    MailModule,
 
     //External Units
     DevicesLocationModule,
