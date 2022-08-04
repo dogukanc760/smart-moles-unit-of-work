@@ -38,17 +38,26 @@ import { ValveCardLogsModule } from './units/workGroup/valveCards/valveCardLogs/
 import { UsersModule } from './units/users/users.module';
 import { MailModule } from './operations/mailer/mailer.module';
 import { MulterModule } from '@nestjs/platform-express';
-
+import { ContractTypesModule } from './units/users/contract/contractType/contractType.module';
+import { SubscriptionModule } from './units/users/contract/subscription/subscription.module';
+import { UserContractModule } from './units/users/contract/userContract/userContract.module';
+import { PermissionsModule } from './units/users/userClaims/permissions/permissions.module';
+import { RolesModule } from './units/users/userClaims/roles/roles.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
     MulterModule.register({
-      dest: './files'
+      dest: './files',
     }),
-    //AuthModule,
+
     //Users
-     UsersModule,
+    UsersModule,
+    ContractTypesModule,
+    SubscriptionModule,
+    UserContractModule,
+    PermissionsModule,
+    RolesModule,
 
     // Mailer
     MailModule,
@@ -102,10 +111,6 @@ import { MulterModule } from '@nestjs/platform-express';
     ValveCardLogsModule,
   ],
   controllers: [AppController],
-  providers: [
-    AppService,
-
-  
-  ],
+  providers: [AppService],
 })
 export class AppModule {}
