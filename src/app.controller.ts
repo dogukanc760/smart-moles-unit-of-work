@@ -53,7 +53,7 @@ export class AppController {
   async sendMail(): Promise<string> {
     this.mailService.sendMail(
       'dogukanc760@hotmail.com',
-      'Egemen Kaya Leylandi-1 Adlı Sistem Sulama Yaparken İnternet Bağlantısı kesildi, lütfen sistemi kontrol ediniz.',
+      'Doğukan Canerler Leylandi-1 Adlı Sistem Sulama Yaparken İnternet Bağlantısı kesildi, lütfen sistemi kontrol ediniz.',
       '',
       'Doğukan Canerler',
       'smartmoles.com',

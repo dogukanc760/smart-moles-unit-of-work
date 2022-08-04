@@ -33,7 +33,7 @@ export class SendMailService {
     try {
       await this.mailerService.sendMail({
         to: mailTo,
-        subject: 'SmartMoles Bilgilendirme ✔ Sn. Egemen Kaya' ,
+        subject: 'SmartMoles Bilgilendirme ✔ Sn. Doğukan Canerler' ,
         template: 'mailtemps',
         context: {
           subject: subject,
