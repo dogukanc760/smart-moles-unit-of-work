@@ -9,6 +9,8 @@ export class SensorMoistureLog extends BaseEntity {
   Sensors: string[];
   @Column({ type:"text", array:true })
   SensorDatas: string[];
+  @Column({type:'varchar', length:100, default:''})
+  SensorDatasAverage:string;
   @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
   GetDataAt: Date;
 }

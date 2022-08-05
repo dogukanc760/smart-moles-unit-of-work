@@ -8,6 +8,6 @@ export class DevicesLocation extends BaseEntity {
   TitleTR: string;
   @Column({ type: 'varchar', length: 50 })
   TitleEN: string;
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 51 })
   ImageUrl: string;
 }

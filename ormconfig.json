@@ -1,11 +1,11 @@
 {
   "type": "postgres",
-  "host": "127.0.0.1",
+  "host": "smartmoles-db.c2u5sdrstqo9.us-east-2.rds.amazonaws.com",
   "port": 5432,
-  "username": "postgres",
-  "password": "1234",
+  "username": "post_sm_gres",
+  "password": "$myPassword=5MaRt*M0L+2512",
   "database": "SMUnitWork",
-  "synchronize": false,
+  "synchronize": true,
   "entities": [
     "dist/**/*.entity{*.ts,*.js}"
   ],

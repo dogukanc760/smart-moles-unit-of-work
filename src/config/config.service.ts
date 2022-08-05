@@ -34,12 +34,19 @@ export class ConfigService {
     return {
       type: 'postgres',
 
-      host: '127.0.0.1',//this.getValue('POSTGRES_HOST'),
+      host: 'smartmoles-db.c2u5sdrstqo9.us-east-2.rds.amazonaws.com',//this.getValue('POSTGRES_HOST'),
       port: 5432,//parseInt(this.getValue('POSTGRES_PORT')),
-      username: 'postgres',//this.getValue('POSTGRES_USER'),
-      password: '1234',//this.getValue('POSTGRES_PASSWORD'),
+      username: 'post_sm_gres',//this.getValue('POSTGRES_USER'),
+      password: '$myPassword=5MaRt*M0L+2512',//this.getValue('POSTGRES_PASSWORD'),
       database: 'SMUnitWork',//this.getValue('POSTGRES_DATABASE'),
-      synchronize: false,
+
+
+      // host: this.getValue('POSTGRES_HOST'),
+      // port: 5432,//parseInt(this.getValue('POSTGRES_PORT')),
+      // username: this.getValue('POSTGRES_USER'),
+      // password: this.getValue('POSTGRES_PASSWORD'),
+      // database: this.getValue('POSTGRES_DATABASE'),
+      synchronize: true,
       entities: ['dist/**/*.entity{*.ts,*.js}'],
 
       migrationsTableName: 'migrations',

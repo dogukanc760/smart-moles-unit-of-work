@@ -23,6 +23,9 @@ export class SensorMoistureLogDTO
   @ApiProperty()
   @IsString()
   SensorDatas: string[];
+  @ApiProperty({ required: false })
+  @IsString()
+  SensorDatasAverage: string;
   @ApiProperty()
   @IsString()
   GetDataAt: Date;
@@ -40,7 +43,7 @@ export class SensorMoistureLogDTO
     it.SensorDatas = dto.SensorDatas;
     it.GetDataAt = dto.GetDataAt;
     it.SensorCardID = dto.SensorCardID;
-    
+    it.SensorDatasAverage = dto.SensorDatasAverage;    
 
     it.createdAt = dto.createdAt;
     it.updatedAt = dto.updatedAt;
@@ -56,6 +59,7 @@ export class SensorMoistureLogDTO
       Sensors: entity.Sensors,
       SensorDatas: entity.SensorDatas,
       GetDataAt: entity.GetDataAt,
+      SensorDatasAverage : entity.SensorDatasAverage,
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       lastChangedDateTime: entity.lastChangedDateTime,
@@ -72,6 +76,7 @@ export class SensorMoistureLogDTO
     givenData.updatedAt = new Date();
     givenData.lastChangedDateTime = new Date();
     givenData.isDeleted = false;
+    givenData.SensorDatasAverage = dto.SensorDatasAverage;
     return givenData;
   }
 }
