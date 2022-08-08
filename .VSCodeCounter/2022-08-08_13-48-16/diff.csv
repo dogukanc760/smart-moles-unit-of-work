@@ -1,0 +1,7 @@
+"filename", "language", "Properties", "TypeScript", "comment", "blank", "total"
+"c:\Users\Emir TARTAR\Desktop\SmartMolesProject\smart-moles-unit-of-work\.env", "Properties", 54, 0, 0, 8, 62
+"c:\Users\Emir TARTAR\Desktop\SmartMolesProject\smart-moles-unit-of-work\src\config\config.service.ts", "TypeScript", 0, 0, 5, 2, 7
+"c:\Users\Emir TARTAR\Desktop\SmartMolesProject\smart-moles-unit-of-work\src\model\WorkGroup\Sensors\sensorCalibrationLog.entity.ts", "TypeScript", 0, 2, 0, 0, 2
+"c:\Users\Emir TARTAR\Desktop\SmartMolesProject\smart-moles-unit-of-work\src\model\WorkGroup\Sensors\sensorMoistureLog.entity.ts", "TypeScript", 0, 2, 0, 0, 2
+"c:\Users\Emir TARTAR\Desktop\SmartMolesProject\smart-moles-unit-of-work\src\units\workGroup\sensors\sensorMoistureLogs\sensorMoistureLog.dto.ts", "TypeScript", 0, 6, 0, -1, 5
+"Total", "-", 54, 10, 5, 9, 78

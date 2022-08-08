@@ -1,0 +1,31 @@
+# Diff Summary
+
+Date : 2022-08-08 13:48:16
+
+Directory c:\\Users\\Emir TARTAR\\Desktop\\SmartMolesProject\\smart-moles-unit-of-work
+
+Total : 5 files,  64 codes, 5 comments, 9 blanks, all 78 lines
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)
+
+## Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Properties | 1 | 54 | 0 | 8 | 62 |
+| TypeScript | 4 | 10 | 5 | 1 | 16 |
+
+## Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 5 | 64 | 5 | 9 | 78 |
+| src | 4 | 10 | 5 | 1 | 16 |
+| src\\config | 1 | 0 | 5 | 2 | 7 |
+| src\\model | 2 | 4 | 0 | 0 | 4 |
+| src\\model\\WorkGroup | 2 | 4 | 0 | 0 | 4 |
+| src\\model\\WorkGroup\\Sensors | 2 | 4 | 0 | 0 | 4 |
+| src\\units | 1 | 6 | 0 | -1 | 5 |
+| src\\units\\workGroup | 1 | 6 | 0 | -1 | 5 |
+| src\\units\\workGroup\\sensors | 1 | 6 | 0 | -1 | 5 |
+| src\\units\\workGroup\\sensors\\sensorMoistureLogs | 1 | 6 | 0 | -1 | 5 |
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)
