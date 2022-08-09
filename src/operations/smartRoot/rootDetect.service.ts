@@ -118,17 +118,16 @@ export class RootDetect {
             }
           }
 
-          const recordSmartRoot =
-            await this.smartRootDetailSecondService.create({
-              createdAt: new Date(),
-              isDeleted: false,
-              SensorDatas: lastChangeDataArray,
-              lastChangedDateTime: new Date(),
-              Sensors: root.Sensors,
-              SmartRootID: root.SmartRootID,
-              updatedAt: new Date(),
-              contentId: '',
-            });
+          await this.smartRootDetailSecondService.create({
+            createdAt: new Date(),
+            isDeleted: false,
+            SensorDatas: lastChangeDataArray,
+            lastChangedDateTime: new Date(),
+            Sensors: root.Sensors,
+            SmartRootID: root.SmartRootID,
+            updatedAt: new Date(),
+            contentId: '',
+          });
         });
 
         lastChangeData = deltaData / deltaTime;
