@@ -1,0 +1,30 @@
+# Diff Summary
+
+Date : 2022-08-09 15:30:40
+
+Directory c:\\Users\\Emir TARTAR\\Desktop\\SmartMolesProject\\smart-moles-unit-of-work
+
+Total : 3 files,  443 codes, 60 comments, 29 blanks, all 532 lines
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)
+
+## Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| TypeScript | 3 | 443 | 60 | 29 | 532 |
+
+## Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 3 | 443 | 60 | 29 | 532 |
+| src | 3 | 443 | 60 | 29 | 532 |
+| src\\operations | 2 | 423 | 60 | 32 | 515 |
+| src\\operations\\smartCapillarity | 1 | 314 | 33 | 21 | 368 |
+| src\\operations\\smartCapillarity\\ManuelWorker | 1 | 314 | 33 | 21 | 368 |
+| src\\operations\\smartRoot | 1 | 109 | 27 | 11 | 147 |
+| src\\units | 1 | 20 | 0 | -3 | 17 |
+| src\\units\\workGroup | 1 | 20 | 0 | -3 | 17 |
+| src\\units\\workGroup\\sensors | 1 | 20 | 0 | -3 | 17 |
+| src\\units\\workGroup\\sensors\\sensorCardLogs | 1 | 20 | 0 | -3 | 17 |
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)

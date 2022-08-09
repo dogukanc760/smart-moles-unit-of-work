@@ -18,7 +18,18 @@ export class SensorCardLogsDTO
   @ApiProperty()
   @IsString()
   SensorCardID: string;
-
+  @ApiProperty()
+  @IsString()
+  LogContent: string;
+  @ApiProperty()
+  @IsString()
+  LogTitle: string;
+  @ApiProperty()
+  @IsString()
+  LogDescription: string;
+  @ApiProperty()
+  @IsString()
+  LogStatus: string;
  
  
 
@@ -32,7 +43,10 @@ export class SensorCardLogsDTO
 
     it.SensorCardID = dto.SensorCardID;
     
-
+    it.LogContent = dto.LogContent;
+    it.LogTitle = dto.LogTitle;
+    it.LogDescription = dto.LogDescription;
+    it.LogStatus = dto.LogStatus;
     it.createdAt = dto.createdAt;
     it.updatedAt = dto.updatedAt;
     it.lastChangedDateTime = dto.lastChangedDateTime;
@@ -44,7 +58,10 @@ export class SensorCardLogsDTO
     return this.from({
       contentId: entity.ContentID,
       SensorCardID: entity.SensorCardID,
-
+      LogContent: entity.LogContent,
+      LogTitle: entity.LogTitle,
+      LogDescription: entity.LogDescription,
+      LogStatus: entity.LogStatus,
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       lastChangedDateTime: entity.lastChangedDateTime,
