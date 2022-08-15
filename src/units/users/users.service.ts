@@ -17,6 +17,8 @@ import { JwtService } from '@nestjs/jwt';
 import { resourceLimits } from 'worker_threads';
 import { AuthGuard } from '@nestjs/passport';
 import datasource from 'src/config/migration.config';
+import { RolesService } from './userClaims/roles/roles.service';
+import { PermissionsService } from './userClaims/permissions/permissions.service';
 
 @Injectable()
 export class UsersService {
@@ -24,31 +26,41 @@ export class UsersService {
     @InjectRepository(Users)
     private readonly repo: Repository<Users>,
     private jwtService: JwtService,
+    private readonly roleService: RolesService,
+    private readonly permissionService: PermissionsService
   ) {}
 
   public async Auth(dto: LoginUsersDTO): Promise<any> {
-    const saltOrRounds = 10;
+    try {
+      const saltOrRounds = 10;
 
-    console.log(dto.Mail);
-    const user = await this.repo
-      .findOne({ where: { Mail: dto.Mail.toString() } })
-      .then((datas) => LoginUsersDTO.fromEntity(datas));
-
-    const isMatch = await bcrypt.compare(dto.Password, user.Password);
-
-    if (user && isMatch) {
-      const findUser = await this.repo
+      console.log(dto.Mail);
+      const user = await this.repo
         .findOne({ where: { Mail: dto.Mail.toString() } })
-        .then((datas) => UsersDTO.fromEntity(datas));
-      const payload = { user: findUser };
-
-      return {
-        access_token: this.jwtService.sign(payload),
-        user: findUser,
-      };
+        .then((datas) => LoginUsersDTO.fromEntity(datas));
+  
+      const isMatch = await bcrypt.compare(dto.Password, user.Password);
+  
+      if (user && isMatch) {
+        const findUser = await this.repo
+          .findOne({ where: { Mail: dto.Mail.toString() } })
+          .then((datas) => UsersDTO.fromEntity(datas));
+        const payload = { user: findUser };
+        const userRole = await this.roleService.get(findUser.RoleID)
+        const userPerm = await this.permissionService.getByRole(userRole.contentId);
+        return {
+          access_token: this.jwtService.sign(payload),
+          user: findUser,
+          permissions:userPerm,
+          userRole: userRole,
+        };
+      }
+     
+      throw new UnauthorizedException();
+    } catch (error) {
+      console.log(error);
+      return error;
     }
-
-    throw new UnauthorizedException();
   }
 
   public async Register(dto: UsersDTO): Promise<UsersDTO> {
