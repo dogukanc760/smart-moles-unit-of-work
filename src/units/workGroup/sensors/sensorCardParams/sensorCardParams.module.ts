@@ -11,6 +11,6 @@ import { SensorCardParamsService } from './sensorCardParams.service';
   imports: [TypeOrmModule.forFeature([SensorCardParams])],
   providers: [SensorCardParamsService],
   controllers: [SensorCardParamsController],
-  exports: [],
+  exports: [SensorCardParamsService],
 })
 export class SensorCardParamsModule {}

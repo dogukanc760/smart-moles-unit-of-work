@@ -15,6 +15,6 @@ import { WorkGroupLogsService } from './workGroupsLog.service';
   imports: [TypeOrmModule.forFeature([WorkGroupLogs])],
   providers: [WorkGroupLogsService],
   controllers: [WorkGroupLogsController],
-  exports: [],
+  exports: [WorkGroupLogsService],
 })
 export class WorkGroupLogsModule {}

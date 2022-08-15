@@ -43,8 +43,8 @@ export class SensorCalibrationLogsService {
     dto: SensorCalibrationLogDTO,
   ): Promise<SensorCalibrationLogDTO> {
     return await this.repo
-      .save(SensorCalibrationLogDTO.toEntity(dto))
-      .then((e) => SensorCalibrationLogDTO.fromEntity(e));
+    .save(SensorCalibrationLogDTO.toEntity(dto))
+    .then((e) => SensorCalibrationLogDTO.fromEntity(e));
   }
 
   // update device

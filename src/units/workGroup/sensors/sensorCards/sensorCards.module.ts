@@ -9,6 +9,6 @@ import { SensorCardsService } from './sensorCards.service';
   imports: [TypeOrmModule.forFeature([SensorCards])],
   providers: [SensorCardsService],
   controllers: [SensorCardsController],
-  exports: [],
+  exports: [SensorCardsService],
 })
 export class SensorCardsModule {}

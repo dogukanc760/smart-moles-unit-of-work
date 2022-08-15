@@ -43,13 +43,20 @@ import { SubscriptionModule } from './units/users/contract/subscription/subscrip
 import { UserContractModule } from './units/users/contract/userContract/userContract.module';
 import { PermissionsModule } from './units/users/userClaims/permissions/permissions.module';
 import { RolesModule } from './units/users/userClaims/roles/roles.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { ManuelValveWorkerModule } from './operations/smartCapillarity/ManuelWorker/ManuelValveWorker.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    ScheduleModule.forRoot(),
     MulterModule.register({
       dest: './files',
     }),
+
+    //Operations
+    ManuelValveWorkerModule,
+    
 
     //Users
     UsersModule,

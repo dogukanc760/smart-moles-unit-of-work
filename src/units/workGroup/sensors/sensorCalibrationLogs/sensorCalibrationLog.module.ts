@@ -11,6 +11,6 @@ import { SensorCalibrationLogsService } from './sensorCalibrationLog.service';
   imports: [TypeOrmModule.forFeature([SensorCalibrationLog])],
   providers: [SensorCalibrationLogsService],
   controllers: [SensorCalibrationLogController],
-  exports: [],
+  exports: [SensorCalibrationLogsService],
 })
 export class SensorCalibrationLogModule {}

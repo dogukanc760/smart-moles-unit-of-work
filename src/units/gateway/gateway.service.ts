@@ -53,7 +53,8 @@ export class GatewayService {
 
   // update device
   public async update(id: string, dto: GatewayDTO): Promise<GatewayDTO> {
-    const newLocal = await this.repo.update(id, dto);
+    try {
+      const newLocal = await this.repo.update(id, dto);
     if (newLocal.affected > 0) {
       const updatedData = GatewayDTO.fromEntity(
         await this.repo.findOne({ where: { ContentID: id } }),
@@ -62,6 +63,9 @@ export class GatewayService {
     }
 
     throw new HttpException('Error updating device', 500);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // update device

@@ -13,6 +13,6 @@ import { WorkGroupService } from './workGroup.service';
   imports: [TypeOrmModule.forFeature([WorkGroup])],
   providers: [WorkGroupService],
   controllers: [WorkGroupController],
-  exports: [],
+  exports: [WorkGroupService],
 })
 export class WorkGroupModule {}

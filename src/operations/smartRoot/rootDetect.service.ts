@@ -110,7 +110,7 @@ export class RootDetect {
           );
           for (let i = 0; i < root.SensorDatas.length; i++) {
             for (let j = 0; j <= i; j++) {
-              deltaData += root[i].SensorDatas[j];
+              deltaData += Number(root.SensorDatas[j]) * 1.1;
               deltaTime += Date.parse(
                 root.lastChangedDateTime.toLocaleDateString(),
               );
@@ -118,7 +118,11 @@ export class RootDetect {
             }
           }
 
-          await this.smartRootDetailSecondService.create({
+          lastChangeDataArray = lastChangeDataArray.sort((prev, next) =>
+            prev > next ? -1 : 1,
+          );
+
+          const secondResult = await this.smartRootDetailSecondService.create({
             createdAt: new Date(),
             isDeleted: false,
             SensorDatas: lastChangeDataArray,
@@ -128,6 +132,17 @@ export class RootDetect {
             updatedAt: new Date(),
             contentId: '',
           });
+          const detectResult = this.detectExistsRoot(secondResult);
+          if (detectResult) {
+            /// BURADA KÖKLER SON 7 GÜNDE EŞLEŞİYOR ONA GÖRE BİR DATA RETURN EDİP İŞLEM YAPMALIYIZ
+            return await this.smartRootDetailSecondService.getBySmartRoot(
+              root.contentId,
+            );
+          }
+          return await this.smartRootDetailSecondService.getBySmartRoot(
+            root.contentId,
+          );
+          /// EĞER İF İÇERİSİNE GİRMEZSE KÖKLER SON 7 GÜNDE DATA OLARAK EŞLEŞMİYORDUR ONA GÖRE VERİ DÖNMEMİZ GEREKİR.
         });
 
         lastChangeData = deltaData / deltaTime;
@@ -135,11 +150,26 @@ export class RootDetect {
     });
   }
 
-  public async detectRoot() {}
+  public async detectExistsRoot(
+    smartRootDetailSecond: SmartRootDetailSecondDTO,
+  ) {
+    let exists = false;
+    const getSmartRoot = await (
+      await this.smartRootDetailSecondService.getAll()
+    ).filter((x) => x.contentId === smartRootDetailSecond.contentId);
+
+    getSmartRoot.forEach((element, index) => {
+      element.SensorDatas[index] === smartRootDetailSecond.SensorDatas[index]
+        ? (exists = true)
+        : (exists = false);
+    });
+
+    return exists;
+  }
 
   public async writeLog() {}
 
-  public async calculateFirst() {}
+  public async calculateFirst(sensorData: number, sensorTime: Date, sensor) {}
 
   public async calculateSecond() {}
 }

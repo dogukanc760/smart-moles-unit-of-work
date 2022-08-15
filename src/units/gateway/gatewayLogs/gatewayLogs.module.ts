@@ -10,6 +10,6 @@ import { GatewayLogsService } from './gatewayLogs.service';
   imports: [TypeOrmModule.forFeature([GatewayLogs])],
   providers: [GatewayLogsService],
   controllers: [GatewayLogsController],
-  exports: [],
+  exports: [GatewayLogsService],
 })
 export class GatewayLogsModule {}

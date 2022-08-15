@@ -25,6 +25,9 @@ export class SensorCalibrationLogDTO
   SensorDatasAverage: string;
   @ApiProperty()
   @IsString()
+  SensorDatas: string[];
+  @ApiProperty()
+  @IsString()
   GetDataAt: Date;
  
  
@@ -40,7 +43,7 @@ export class SensorCalibrationLogDTO
     it.SensorDatasAverage = dto.SensorDatasAverage;
     it.GetDataAt = dto.GetDataAt;
     it.SensorCardID = dto.SensorCardID;
-    
+    it.SensorDatas = dto.SensorDatas;
 
     it.createdAt = dto.createdAt;
     it.updatedAt = dto.updatedAt;
@@ -55,6 +58,7 @@ export class SensorCalibrationLogDTO
       SensorCardID: entity.SensorCardID,
       Sensors: entity.Sensors,
       SensorDatasAverage: entity.SensorDatasAverage,
+      SensorDatas: entity.SensorDatas,
       GetDataAt: entity.GetDataAt,
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
@@ -68,6 +72,7 @@ export class SensorCalibrationLogDTO
     givenData.SensorCardID = dto.SensorCardID;
     givenData.Sensors = dto.Sensors;
     givenData.SensorDatasAverage = dto.SensorDatasAverage;
+    givenData.SensorDatas = dto.SensorDatas;
     givenData.GetDataAt = dto.GetDataAt;
     givenData.updatedAt = new Date();
     givenData.lastChangedDateTime = new Date();

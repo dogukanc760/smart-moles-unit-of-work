@@ -9,6 +9,6 @@ import { SensorMoistureLogService } from './sensorMoistureLog.service';
   imports: [TypeOrmModule.forFeature([SensorMoistureLog])],
   providers: [SensorMoistureLogService],
   controllers: [SensorMoistureLogController],
-  exports: [],
+  exports: [SensorMoistureLogService],
 })
 export class SensorMoistureLogModule {}

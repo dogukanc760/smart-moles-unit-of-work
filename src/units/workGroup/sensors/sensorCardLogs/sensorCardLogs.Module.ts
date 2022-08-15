@@ -9,6 +9,6 @@ import { SensorCardLogsService } from './sensorCardLogs.service';
   imports: [TypeOrmModule.forFeature([SensorCardLogs])],
   providers: [SensorCardLogsService],
   controllers: [SensorCardLogsController],
-  exports: [],
+  exports: [SensorCardLogsService],
 })
 export class SensorCardLogsModule {}
