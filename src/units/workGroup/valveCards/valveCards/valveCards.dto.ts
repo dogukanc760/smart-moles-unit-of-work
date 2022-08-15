@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, IsBoolean } from 'class-validator';
-import { PumpCards } from 'src/model/WorkGroup/ValveCards/PumpCards.entity';
-import { ValveCards } from 'src/model/WorkGroup/ValveCards/valveCards.entity';
+
+import { ValveCards } from '../../../../model/WorkGroup/ValveCards/valveCards.entity';
 
 import { isBoolean } from 'util';
 

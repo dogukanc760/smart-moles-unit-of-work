@@ -2,7 +2,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { WorkGroupLogs } from 'src/model/WorkGroup/WorkGrouplogs.entity';
+import { WorkGroupLogs } from '../../../model/WorkGroup/workGroupLogs.entity';
 import { WorkGroupsLogDTO } from './workGroupsLog.dto';
 
 

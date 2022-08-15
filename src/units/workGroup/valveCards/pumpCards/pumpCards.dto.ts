@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, IsBoolean } from 'class-validator';
-import { PumpCards } from 'src/model/WorkGroup/ValveCards/PumpCards.entity';
+import { PumpCards } from '../../../../model/WorkGroup/ValveCards/pumpCards.entity';
 
-import { isBoolean } from 'util';
+
 
 export class PumpCardsDTO implements Readonly<PumpCardsDTO> {
   @ApiProperty({ required: false })
