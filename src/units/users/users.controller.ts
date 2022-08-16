@@ -28,6 +28,11 @@ export class UsersController {
     return await this.usersService.getAll();
   }
 
+  @Get('/non-condition')
+  public async getAllNonCondition(): Promise<UsersDTO[]> {
+    return await this.usersService.getAllNonCondition();
+  }
+
   @Get(':id')
   public async get(@Param('id') id: string): Promise<UsersDTO> {
     return await this.usersService.get(id);

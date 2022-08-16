@@ -94,6 +94,12 @@ export class UsersService {
   public async getAll(): Promise<UsersDTO[]> {
     return await this.repo
       .find()
+      .then((datas) => datas.map((e) => UsersDTO.fromEntity(e)).filter((e) => e.isDeleted===false));
+  }
+
+  public async getAllNonCondition(): Promise<UsersDTO[]> {
+    return await this.repo
+      .find()
       .then((datas) => datas.map((e) => UsersDTO.fromEntity(e)));
   }
 
