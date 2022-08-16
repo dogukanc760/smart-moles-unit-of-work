@@ -152,9 +152,10 @@ export class UsersService {
   // update device
   public async delete(id: string): Promise<UsersDTO> {
     const data = await this.repo.findOne({ where: { ContentID: id } });
+    data.isDeleted = true;
     const newLocal = await this.repo.update(id, data);
     if (newLocal.affected > 0) {
-      data.isDeleted = true;
+      
       const updatedData = UsersDTO.fromEntity(
         await this.repo.findOne({ where: { ContentID: id } }),
       );
