@@ -27,7 +27,7 @@ export class UsersService {
     private readonly repo: Repository<Users>,
     private jwtService: JwtService,
     private readonly roleService: RolesService,
-    private readonly permissionService: PermissionsService
+    private readonly permissionService: PermissionsService,
   ) {}
 
   public async Auth(dto: LoginUsersDTO): Promise<any> {
@@ -38,24 +38,26 @@ export class UsersService {
       const user = await this.repo
         .findOne({ where: { Mail: dto.Mail.toString() } })
         .then((datas) => LoginUsersDTO.fromEntity(datas));
-  
+
       const isMatch = await bcrypt.compare(dto.Password, user.Password);
-  
+
       if (user && isMatch) {
         const findUser = await this.repo
           .findOne({ where: { Mail: dto.Mail.toString() } })
           .then((datas) => UsersDTO.fromEntity(datas));
         const payload = { user: findUser };
-        const userRole = await this.roleService.get(findUser.RoleID)
-        const userPerm = await this.permissionService.getByRole(userRole.contentId);
+        const userRole = await this.roleService.get(findUser.RoleID);
+        const userPerm = await this.permissionService.getByRole(
+          userRole.contentId,
+        );
         return {
           access_token: this.jwtService.sign(payload),
           user: findUser,
-          permissions:userPerm,
+          permissions: userPerm,
           userRole: userRole,
         };
       }
-     
+
       throw new UnauthorizedException();
     } catch (error) {
       console.log(error);
@@ -94,7 +96,22 @@ export class UsersService {
   public async getAll(): Promise<UsersDTO[]> {
     return await this.repo
       .find()
-      .then((datas) => datas.map((e) => UsersDTO.fromEntity(e)).filter((e) => e.isDeleted===false));
+      .then((datas) =>
+        datas
+          .map((e) => UsersDTO.fromEntity(e))
+          .filter((e) => e.isDeleted === false && e.IsAdmin === false),
+      );
+  }
+
+  
+  public async getSystemUsers(): Promise<UsersDTO[]> {
+    return await this.repo
+      .find()
+      .then((datas) =>
+        datas
+          .map((e) => UsersDTO.fromEntity(e))
+          .filter((e) => e.isDeleted === false && e.IsAdmin === true),
+      );
   }
 
   public async getAllNonCondition(): Promise<UsersDTO[]> {
@@ -161,7 +178,28 @@ export class UsersService {
     data.isDeleted = true;
     const newLocal = await this.repo.update(id, data);
     if (newLocal.affected > 0) {
-      
+      const updatedData = UsersDTO.fromEntity(
+        await this.repo.findOne({ where: { ContentID: id } }),
+      );
+      return updatedData;
+    }
+
+    throw new HttpException('Error updating device', 500);
+  }
+
+  // verified user
+  public async verifiedUser(id: string): Promise<UsersDTO> {
+    const data = await this.repo.findOne({ where: { ContentID: id } });
+    if(data.MailIsVerified){
+      throw new BadRequestException(
+        data.Mail,
+        'This user is already verified',
+      );
+    }
+    data.MailIsVerified = true;
+    data.MailVerifiedAt = new Date();
+    const newLocal = await this.repo.update(id, data);
+    if (newLocal.affected > 0) {
       const updatedData = UsersDTO.fromEntity(
         await this.repo.findOne({ where: { ContentID: id } }),
       );

@@ -33,12 +33,21 @@ export class UsersController {
     return await this.usersService.getAllNonCondition();
   }
 
+  @Get('/system-users')
+  public async getAllSystemUsers(): Promise<UsersDTO[]> {
+    return await this.usersService.getSystemUsers();
+  }
+
   @Get(':id')
   public async get(@Param('id') id: string): Promise<UsersDTO> {
     return await this.usersService.get(id);
   }
 
-  
+  @Get('/by-verified/:state')
+  public async getByVerified(@Param('state') state: boolean): Promise<UsersDTO[]> {
+    return await this.usersService.getByVerified(state);
+  }
+
   @Post('auth')
   public async auth(@Body() dto: UsersDTO): Promise<any> {
     return await this.usersService.Auth(dto);
@@ -55,6 +64,11 @@ export class UsersController {
     @Body() dto: UsersDTO,
   ): Promise<UsersDTO> {
     return await this.usersService.update(id, dto);
+  }
+
+  @Put('/verify/:id')
+  public async userVerify(@Param('id') id: string): Promise<UsersDTO> {
+    return await this.usersService.verifiedUser(id);
   }
 
   @Delete(':id')

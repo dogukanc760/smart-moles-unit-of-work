@@ -154,7 +154,7 @@ export class UsersDTO implements Readonly<UsersDTO> {
       Surname: entity.Surname,
       TaxNum: entity.TaxNum,
       UserType: entity.UserType,
-
+ 
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       lastChangedDateTime: entity.lastChangedDateTime,
@@ -176,8 +176,8 @@ export class UsersDTO implements Readonly<UsersDTO> {
     givenData.TaxNum = dto.TaxNum;
     givenData.MersisNo = dto.MersisNo;
     givenData.Address = dto.Address;
-    givenData.MailIsVerified = dto.MailIsVerified;
-    givenData.MailVerifiedAt = dto.MailVerifiedAt;
+    givenData.MailIsVerified = false;
+    givenData.MailVerifiedAt = new Date();
     givenData.Country = dto.Country;
     givenData.City = dto.City;
     givenData.Distinct = dto.Distinct;
@@ -188,7 +188,7 @@ export class UsersDTO implements Readonly<UsersDTO> {
     givenData.HomePhone = dto.HomePhone;
     givenData.UserType = dto.UserType;
     givenData.IsBusiness = dto.IsBusiness;
-
+    givenData.IsAdmin = dto.IsAdmin;
     givenData.updatedAt = new Date();
     givenData.lastChangedDateTime = new Date();
     givenData.isDeleted = false;
