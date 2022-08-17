@@ -176,7 +176,7 @@ export class UsersDTO implements Readonly<UsersDTO> {
     givenData.TaxNum = dto.TaxNum;
     givenData.MersisNo = dto.MersisNo;
     givenData.Address = dto.Address;
-    givenData.MailIsVerified = false;
+    givenData.MailIsVerified = dto.MailIsVerified;
     givenData.MailVerifiedAt = new Date();
     givenData.Country = dto.Country;
     givenData.City = dto.City;

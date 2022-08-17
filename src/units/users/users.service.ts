@@ -80,7 +80,35 @@ export class UsersService {
         );
       } else {
         dto.Password = await bcrypt.hash(dto.Password, 5);
+        dto.MailIsVerified = false;
+        dto.IsAdmin = false;
+        return await this.repo
+          .save(UsersDTO.toEntity(dto))
+          .then((e) => UsersDTO.fromEntity(e));
+      }
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
 
+  public async RegisterSystemUser(dto: UsersDTO): Promise<UsersDTO> {
+    try {
+      const user = await this.repo
+        .createQueryBuilder('users')
+        .select('COUNT (*)', 'count')
+        .where('users.Mail = :name', { name: `${dto.Mail}` })
+        .getCount();
+
+      if (user > 0) {
+        throw new BadRequestException(
+          dto.Mail,
+          'This user is already registered',
+        );
+      } else {
+        dto.Password = await bcrypt.hash(dto.Password, 5);
+        dto.MailIsVerified = true;
+        dto.IsAdmin = true;
         return await this.repo
           .save(UsersDTO.toEntity(dto))
           .then((e) => UsersDTO.fromEntity(e));

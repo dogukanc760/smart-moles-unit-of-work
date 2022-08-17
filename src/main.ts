@@ -19,6 +19,7 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionFilter(httpAdapter));
   
   app.setGlobalPrefix('v1/api');
+
   const config = new DocumentBuilder()
     .setTitle('Smartmoles Cloud Services')
     .setDescription('For SmartCapillarity and SmartRoot ')

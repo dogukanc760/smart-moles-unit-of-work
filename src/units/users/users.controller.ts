@@ -58,6 +58,11 @@ export class UsersController {
     return await this.usersService.Register(dto);
   }
 
+  @Post('register-sysuser')
+  public async createSystemUser(@Body() dto: UsersDTO): Promise<UsersDTO> {
+    return await this.usersService.RegisterSystemUser(dto);
+  }
+
   @Put(':id')
   public async update(
     @Param('id') id: string,
