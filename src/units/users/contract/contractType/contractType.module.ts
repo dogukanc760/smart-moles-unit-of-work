@@ -10,6 +10,6 @@ import { ContractTypeService } from './contractType.service';
   imports: [TypeOrmModule.forFeature([ContractType])],
   providers: [ContractTypeService],
   controllers: [ContractTypesController],
-  exports: [],
+  exports: [ContractTypeService],
 })
 export class ContractTypesModule {}

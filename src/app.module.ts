@@ -45,6 +45,7 @@ import { PermissionsModule } from './units/users/userClaims/permissions/permissi
 import { RolesModule } from './units/users/userClaims/roles/roles.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ManuelValveWorkerModule } from './operations/smartCapillarity/ManuelWorker/ManuelValveWorker.module';
+import { SystemInstallationModules } from './units/ManuelSystemInstallation/systemInstallation.module';
 
 @Module({
   imports: [
@@ -56,7 +57,8 @@ import { ManuelValveWorkerModule } from './operations/smartCapillarity/ManuelWor
 
     //Operations
     ManuelValveWorkerModule,
-    
+    //Installation
+    SystemInstallationModules,
 
     //Users
     UsersModule,

@@ -11,6 +11,6 @@ import { UserContractService } from './userContract.service';
   imports: [TypeOrmModule.forFeature([UserContract])],
   providers: [UserContractService],
   controllers: [UserContractsController],
-  exports: [],
+  exports: [UserContractService],
 })
 export class UserContractModule {}

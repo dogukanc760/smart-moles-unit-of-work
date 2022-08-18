@@ -11,6 +11,6 @@ import { ModemImeiService } from './modemImeiRecords.service';
   imports: [TypeOrmModule.forFeature([ModemImeriRecords])],
   providers: [ModemImeiService],
   controllers: [ModemImeiRecordsController],
-  exports: [],
+  exports: [ModemImeiService],
 })
 export class ModemImeiRecordsModule {}

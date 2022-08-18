@@ -11,6 +11,6 @@ import { SimCardsService } from './simCards.service';
   imports: [TypeOrmModule.forFeature([SimCards])],
   providers: [SimCardsService],
   controllers: [SimCardsController],
-  exports: [],
+  exports: [SimCardsService],
 })
 export class SimCardsModule {}

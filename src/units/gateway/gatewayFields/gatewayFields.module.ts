@@ -11,6 +11,6 @@ import { GatewayFieldsService } from './gatewayFields.service';
   imports: [TypeOrmModule.forFeature([GatewayFields])],
   providers: [GatewayFieldsService],
   controllers: [GatewayFieldsController],
-  exports: [],
+  exports: [GatewayFieldsService],
 })
 export class GatewayFieldsModule {}
