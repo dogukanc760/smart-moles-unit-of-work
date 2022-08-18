@@ -44,12 +44,16 @@ export class UsersController {
   }
 
   @Get('/by-verified/:state')
-  public async getByVerified(@Param('state') state: boolean): Promise<UsersDTO[]> {
+  public async getByVerified(
+    @Param('state') state: boolean,
+  ): Promise<UsersDTO[]> {
     return await this.usersService.getByVerified(state);
   }
 
   @Post('auth')
   public async auth(@Body() dto: UsersDTO): Promise<any> {
+    const data = await this.usersService.Auth(dto);
+    console.log(data);
     return await this.usersService.Auth(dto);
   }
 
@@ -61,6 +65,14 @@ export class UsersController {
   @Post('register-sysuser')
   public async createSystemUser(@Body() dto: UsersDTO): Promise<UsersDTO> {
     return await this.usersService.RegisterSystemUser(dto);
+  }
+
+  @Put('/update-pass/:id')
+  public async updatePass(
+    @Body() dto: UsersDTO,   
+    @Param('id') id: string,
+  ): Promise<UsersDTO> {
+    return await this.usersService.updatePassword(id, dto);
   }
 
   @Put(':id')
