@@ -29,7 +29,7 @@ export class PermissionsController {
   }
 
   @Get('/gey-by-user/:id')
-  public async getByRole(@Param('id') id: string): Promise<PermissionsDTO> {
+  public async getByRole(@Param('id') id: string): Promise<PermissionsDTO[]> {
     return await this.permissionsService.getByRole(id);
   }
 

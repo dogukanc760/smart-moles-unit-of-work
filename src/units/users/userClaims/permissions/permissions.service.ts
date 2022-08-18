@@ -24,10 +24,10 @@ export class PermissionsService {
       .then((e) => PermissionsDTO.fromEntity(e));
   }
 
-  public async getByRole(id: string): Promise<PermissionsDTO> {
+  public async getByRole(id: string): Promise<PermissionsDTO[]> {
     return await this.repo
-      .findOne({ where: { RoleID: id } })
-      .then((e) => PermissionsDTO.fromEntity(e));
+      .find({ where: { RoleID: id } })
+      .then((datas) => datas.map((e) => PermissionsDTO.fromEntity(e)));
   }
 
   // save new device
