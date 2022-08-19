@@ -16,7 +16,7 @@ export class IrrigationTypesService {
   public async getAllDevicesLocations(): Promise<IrrigationTypesDTO[]> {
     return await this.repo
       .find()
-      .then((datas) => datas.map((e) => IrrigationTypesDTO.fromEntity(e)));
+      .then((datas) => datas.map((e) => IrrigationTypesDTO.fromEntity(e)).filter(x=>x.isDeleted === false));
   }
 
   public async getOneDeviceLocation(id: string): Promise<IrrigationTypesDTO> {
