@@ -48,7 +48,7 @@ export class SystemInstallationService {
 
   public async InstallStep(
     step: number,
-    dataCount: number,
+    
     userDto?: UsersDTO,
     contractTypeDto?: ContractTypeDTO,
     userContractDto?: UserContractDTO,
