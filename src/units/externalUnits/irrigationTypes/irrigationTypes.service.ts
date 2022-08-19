@@ -51,9 +51,10 @@ export class IrrigationTypesService {
   // update device
   public async delete(id: string): Promise<IrrigationTypesDTO> {
     const data = await this.repo.findOne({ where: { ContentID: id } });
+    data.isDeleted = true;
     const newLocal = await this.repo.update(id, data);
     if (newLocal.affected > 0) {
-      data.isDeleted = true;
+      
       const updatedData = IrrigationTypesDTO.fromEntity(
         await this.repo.findOne({ where: { ContentID: id } }),
       );

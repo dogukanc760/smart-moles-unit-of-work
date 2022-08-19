@@ -4,7 +4,6 @@ import { Plants } from 'src/model/ExternalUnits/plants.entity';
 import { Repository } from 'typeorm';
 import { PlantsDTO } from './plants.dto';
 
-
 @Injectable()
 export class PlantService {
   constructor(
@@ -33,19 +32,21 @@ export class PlantService {
   }
 
   // update device
-  public async update(
-    id: string,
-    dto: PlantsDTO,
-  ): Promise<PlantsDTO> {
-    const newLocal = await this.repo.update(id, dto);
-    if (newLocal.affected > 0) {
-      const updatedData = PlantsDTO.fromEntity(
-        await this.repo.findOne({ where: { ContentID: id } }),
-      );
-      return updatedData;
-    }
+  public async update(id: string, dto: PlantsDTO): Promise<PlantsDTO> {
+    try {
+      const newLocal = await this.repo.update(id, dto);
+      if (newLocal.affected > 0) {
+        const updatedData = PlantsDTO.fromEntity(
+          await this.repo.findOne({ where: { ContentID: id } }),
+        );
+        return updatedData;
+      }
 
-    throw new HttpException('Error updating device', 500);
+      throw new HttpException('Error updating device', 500);
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
   }
 
   // update device
