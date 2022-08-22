@@ -4,7 +4,6 @@ import { SmartRootDetailSecond } from 'src/model/SmartRoot/smartRootDetailSecond
 import { Repository } from 'typeorm';
 import { SmartRootDetailSecondDTO } from './smartRootDetailSecond.dto';
 
-
 @Injectable()
 export class SmartRootDetailSecondService {
   constructor(
@@ -13,10 +12,28 @@ export class SmartRootDetailSecondService {
   ) {}
 
   //get all devices locations
-  public async getAll(): Promise<SmartRootDetailSecondDTO[]> {
-    return await this.repo
+  public async getAll(): Promise<any> {
+    let deltaData = 0;
+    const data = await this.repo
       .find()
-      .then((datas) => datas.map((e) => SmartRootDetailSecondDTO.fromEntity(e)));
+      .then((datas) =>
+        datas.map((e) => SmartRootDetailSecondDTO.fromEntity(e)),
+      );
+
+    data.forEach(async (root, index) => {
+      //var sortedArray: number[] = numericArray.sort((n1,n2) => n1 - n2);
+      root.SensorDatas = root.SensorDatas.sort((previous, next) =>
+        previous > next ? -1 : 1,
+      );
+      root.SensorDatas.map((x) => {
+        deltaData += Number(x);
+      });
+      deltaData = deltaData / root.SensorDatas.length;
+      root.SensorDatas.push(deltaData.toString());
+      deltaData = 0;
+    });
+
+    return data;
   }
 
   public async get(id: string): Promise<SmartRootDetailSecondDTO> {
@@ -28,18 +45,25 @@ export class SmartRootDetailSecondService {
   public async getBySmartRoot(id: string): Promise<SmartRootDetailSecondDTO[]> {
     return await this.repo
       .find({ where: { SmartRootID: id } })
-      .then((datas) => datas.map((e) => SmartRootDetailSecondDTO.fromEntity(e)));
+      .then((datas) =>
+        datas.map((e) => SmartRootDetailSecondDTO.fromEntity(e)),
+      );
   }
 
   // save new device
-  public async create(dto: SmartRootDetailSecondDTO): Promise<SmartRootDetailSecondDTO> {
+  public async create(
+    dto: SmartRootDetailSecondDTO,
+  ): Promise<SmartRootDetailSecondDTO> {
     return await this.repo
       .save(SmartRootDetailSecondDTO.toEntity(dto))
       .then((e) => SmartRootDetailSecondDTO.fromEntity(e));
   }
 
   // update device
-  public async update(id: string, dto: SmartRootDetailSecondDTO): Promise<SmartRootDetailSecondDTO> {
+  public async update(
+    id: string,
+    dto: SmartRootDetailSecondDTO,
+  ): Promise<SmartRootDetailSecondDTO> {
     const newLocal = await this.repo.update(id, dto);
     if (newLocal.affected > 0) {
       const updatedData = SmartRootDetailSecondDTO.fromEntity(

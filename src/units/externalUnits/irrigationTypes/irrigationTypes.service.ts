@@ -4,7 +4,6 @@ import { IrrigationTypes } from 'src/model/ExternalUnits/irrigationTypes.entity'
 import { Repository } from 'typeorm';
 import { IrrigationTypesDTO } from './irrigationTypes.dto';
 
-
 @Injectable()
 export class IrrigationTypesService {
   constructor(
@@ -16,7 +15,11 @@ export class IrrigationTypesService {
   public async getAllDevicesLocations(): Promise<IrrigationTypesDTO[]> {
     return await this.repo
       .find()
-      .then((datas) => datas.map((e) => IrrigationTypesDTO.fromEntity(e)).filter(x=>x.isDeleted === false));
+      .then((datas) =>
+        datas
+          .map((e) => IrrigationTypesDTO.fromEntity(e))
+          .filter((x) => x.isDeleted === false),
+      );
   }
 
   public async getOneDeviceLocation(id: string): Promise<IrrigationTypesDTO> {
@@ -54,7 +57,6 @@ export class IrrigationTypesService {
     data.isDeleted = true;
     const newLocal = await this.repo.update(id, data);
     if (newLocal.affected > 0) {
-      
       const updatedData = IrrigationTypesDTO.fromEntity(
         await this.repo.findOne({ where: { ContentID: id } }),
       );

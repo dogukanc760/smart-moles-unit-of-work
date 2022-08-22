@@ -167,6 +167,23 @@ export class RootDetect {
     return exists;
   }
 
+  public async detectExistsRootFirst(
+    smartRootDetailSecond: SmartRootDetailSecondDTO,
+  ) {
+    let exists = false;
+    const getSmartRoot = await (
+      await this.smartRootDetailSecondService.getAll()
+    ).filter((x) => x.contentId === smartRootDetailSecond.contentId);
+
+    getSmartRoot.forEach((element, index) => {
+      element.SensorDatas[index] === smartRootDetailSecond.SensorDatas[index]
+        ? (exists = true)
+        : (exists = false);
+    });
+
+    return exists;
+  }
+
   public async writeLog() {}
 
   public async calculateFirst(sensorData: number, sensorTime: Date, sensor) {}
