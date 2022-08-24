@@ -46,6 +46,7 @@ import { RolesModule } from './units/users/userClaims/roles/roles.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ManuelValveWorkerModule } from './operations/smartCapillarity/ManuelWorker/ManuelValveWorker.module';
 import { SystemInstallationModules } from './units/ManuelSystemInstallation/systemInstallation.module';
+import { SmartRootClassificationModule } from './units/smartRoot/smartRootClassification/smartRootClassification.module';
 
 @Module({
   imports: [
@@ -90,6 +91,7 @@ import { SystemInstallationModules } from './units/ManuelSystemInstallation/syst
     SmartRootModule,
     SmartRootDetailFirstModule,
     SmartRootDetailSecondModule,
+    SmartRootClassificationModule,
 
     //Work Groups
     WorkGroupModule,

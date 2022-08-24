@@ -14,6 +14,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { TransformInterceptor } from 'src/libs/api-results/standart-results';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { UsersDTO } from './users.dto';
+import { LoginUsersDTO } from './users.login.dto';
 import { UsersService } from './users.service';
 
 @Controller('users')
@@ -51,7 +52,7 @@ export class UsersController {
   }
 
   @Post('auth')
-  public async auth(@Body() dto: UsersDTO): Promise<any> {
+  public async auth(@Body() dto: LoginUsersDTO): Promise<any> {
     const data = await this.usersService.Auth(dto);
     console.log(data);
     return await this.usersService.Auth(dto);
