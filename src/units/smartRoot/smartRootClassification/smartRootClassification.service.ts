@@ -27,18 +27,18 @@ export class SmartRootClassificationService {
       );
   }
 
-    // get all smartroot classification
-    public async getAllSmartRootClassification(
-      id: string,
-    ): Promise<SmartRootClassificationDTO[]> {
-      return await this.repo
-        .find({
-          where: { SmartRootID: id },
-          })
-        .then((datas) =>
-          datas.map((e) => SmartRootClassificationDTO.fromEntity(e)),
-        );
-    }
+  // get all smartroot classification
+  public async getAllSmartRootClassification(
+    id: string,
+  ): Promise<SmartRootClassificationDTO[]> {
+    return await this.repo
+      .find({
+        where: { SmartRootID: id },
+      })
+      .then((datas) =>
+        datas.map((e) => SmartRootClassificationDTO.fromEntity(e)),
+      );
+  }
 
   // get  smartroot classification between two dates
   public async getBetweenTwoDateSmartRootClassification(
@@ -55,8 +55,8 @@ export class SmartRootClassificationService {
       );
   }
 
-   // get  smartroot classification by date
-   public async getSmartRootClassificationByDate(
+  // get  smartroot classification by date
+  public async getSmartRootClassificationByDate(
     startDate: Date,
   ): Promise<SmartRootClassificationDTO[]> {
     return await this.repo
@@ -83,11 +83,28 @@ export class SmartRootClassificationService {
       .then((e) => SmartRootClassificationDTO.fromEntity(e));
   }
 
+  // SMARTROOTUN SON 7 GÜNLÜK SINIFLANDIRMASINI DÖNDÜRÜR
   public async getBySmartRoot(
     id: string,
   ): Promise<SmartRootClassificationDTO[]> {
     return await this.repo
-      .find({ where: { SmartRootID: id } })
+      .find({
+        where: { SmartRootID: id },
+        order: { ContentID: 'DESC' },
+        take: 7,
+      })
+      .then((datas) =>
+        datas.map((e) => SmartRootClassificationDTO.fromEntity(e)),
+      );
+  }
+
+  public async getBySmartRootAll(
+    id: string,
+  ): Promise<SmartRootClassificationDTO[]> {
+    return await this.repo
+      .find({
+        where: { SmartRootID: id },
+      })
       .then((datas) =>
         datas.map((e) => SmartRootClassificationDTO.fromEntity(e)),
       );

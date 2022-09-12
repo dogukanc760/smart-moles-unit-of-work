@@ -78,6 +78,13 @@ export class SmartRootClassificationController {
     return await this.smartRootClassificationService.getBySmartRoot(id);
   }
 
+  @Get('/get-by-smartroot-all/:id')
+  public async getBySmartRootAll(
+    @Param('id') id: string,
+  ): Promise<SmartRootClassificationDTO[]> {
+    return await this.smartRootClassificationService.getBySmartRootAll(id);
+  }
+
   @Post()
   public async create(
     @Body() dto: SmartRootClassificationDTO,
