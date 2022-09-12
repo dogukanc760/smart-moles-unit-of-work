@@ -1,34 +1,34 @@
 import { BaseEntity } from 'src/model/base.entity';
 import { Column, Entity } from 'typeorm';
 
-@Entity({ name: 'moistureConditions' })
-export class MoistureConditions extends BaseEntity {
+@Entity({ name: 'tParametersByValve' })
+export class TParamatersByValve extends BaseEntity {
   @Column({ type: 'varchar', length: 50 })
-  KhasID: string;
-  @Column({type: 'varchar', length: 50 })
-  DeviceEeprom: string;
-  @Column({type: 'varchar', length: 50 })
   ValveID: string;
   @Column({type: 'varchar', length: 50 })
-  KhasCount: string;
+  T1T3TargetValue: string;
   @Column({type: 'varchar', length: 50 })
-  PositionID: string;
+  IncrementT1Time: string;
   @Column({type: 'varchar', length: 50 })
-  ConditionID: string;
+  ChangeT1Time: string;
   @Column({type: 'varchar', length: 50 })
-  ReadingCommand: string;
+  DecrementT1Time: string;
   @Column({type: 'varchar', length: 50 })
-  ConditionEeprom: string;
+  T1TimeMinLimit: string;
   @Column({type: 'varchar', length: 50 })
-  FieldRangeCondition: string;
+  T1TimeMaxLimit: string;
   @Column({type: 'varchar', length: 50 })
-  FieldRange: string;
+  T2MinLimit: string;
   @Column({type: 'varchar', length: 50 })
-  MaxRyRate: string;
-  @Column({type: 'boolean', default: false})
-  CheckKhasConWhenOver: boolean;
+  T2MaxLimit: string;
+  @Column({type: 'varchar', length: 50 })
+  IncrementT3Time: string;
+  @Column({type: 'varchar', length: 50 })
+  ChangeT3Time: string;
+  @Column({type: 'varchar', length: 50 })
+  DecrementT3Time: string;
   @Column({ type: 'varchar', length: 50 })
-  StartIrrigationCondition: string;
+  T3TimeMinLimit: string;
   @Column({ type: 'varchar', length: 50 })
-  StartIrrigationConditionPoint: string;
+  T3TimeMaxLimit: string;
 }
