@@ -68,6 +68,11 @@ import { PumpLogsModule } from './units/oldSystems/pumps/pumpLogs/pumpLogs.modul
 import { PumpSetupModule } from './units/oldSystems/pumps/pumpSetup/pumpSetup.module';
 import { TParamatersByValveModule } from './units/oldSystems/pumps/tParametersByValve/tParamatersByValve.module';
 import { ValveCardGroupModule } from './units/oldSystems/pumps/valveCardGroup/valveCardGroup.module';
+import { ValveConditionModule } from './units/oldSystems/pumps/valveCondition/valveCondition.module';
+import { ValveSetupModule } from './units/oldSystems/pumps/valveSetup/valveSetup.module';
+import { WaterMeterGroupModule } from './units/oldSystems/pumps/waterMeterGroup/waterMeterGroup.module';
+import { WaterMeterModules } from './units/oldSystems/pumps/waterMeterLogs/waterMeterLogs.module';
+import { WaterMeterSetupModule } from './units/oldSystems/pumps/waterMeterSetup/waterMeterSetup.module';
 
 @Module({
   imports: [
@@ -169,6 +174,11 @@ import { ValveCardGroupModule } from './units/oldSystems/pumps/valveCardGroup/va
     PumpSetupModule,
     TParamatersByValveModule,
     ValveCardGroupModule,
+    ValveConditionModule,
+    ValveSetupModule,
+    WaterMeterGroupModule,
+    WaterMeterModules,
+    WaterMeterSetupModule,
   ],
   controllers: [AppController],
   providers: [AppService],
