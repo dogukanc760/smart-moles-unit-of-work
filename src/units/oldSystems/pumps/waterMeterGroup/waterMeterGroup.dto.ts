@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, IsBoolean } from 'class-validator';
-import { ValveCardGroups } from 'src/model/OldSystem/Pumps/valveCardGroup.entity';
-import { ValveConditions } from 'src/model/OldSystem/Pumps/valveCondition.entity';
-import { WaterMeterGroup } from 'src/model/OldSystem/Pumps/WaterMeterGroup.entity';
+
+import { WaterMeterGroup } from '../../../../model/OldSystem/Pumps/waterMeterGroup.entity';
 
 export class WaterMeterGroupDTO implements Readonly<WaterMeterGroupDTO> {
   @ApiProperty({ required: false })

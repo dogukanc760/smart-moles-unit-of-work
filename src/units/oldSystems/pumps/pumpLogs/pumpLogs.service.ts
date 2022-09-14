@@ -1,6 +1,6 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PumpLogs } from 'src/model/OldSystem/Pumps/PumpLogs.entity';
+import { PumpLogs } from '../../../../model/OldSystem/Pumps/pumpLogs.entity';
 import { Repository } from 'typeorm';
 import { PumpLogsDTO } from './pumpLogs.dto';
 
