@@ -6,7 +6,7 @@ export class PressureSensorParams extends BaseEntity {
   @Column({ type: 'varchar', length: 50 })
   ValveID: string;
   @Column({type: 'boolean', default: false})
-  CheckPressureSensor: string;
+  CheckPressureSensor: boolean;
   @Column({type: 'varchar', length: 50 })
   ValveStartValue: string;
   @Column({type: 'varchar', length: 50 })
