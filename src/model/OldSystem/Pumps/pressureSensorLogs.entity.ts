@@ -6,5 +6,4 @@ import { Column, Entity } from 'typeorm';
 export class MoistureConditions extends LogBaseEntity {
   @Column({ type: 'varchar', length: 50 })
   PressureSensorID: string;
- 
 }
