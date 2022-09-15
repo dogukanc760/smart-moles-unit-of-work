@@ -73,6 +73,7 @@ import { ValveSetupModule } from './units/oldSystems/pumps/valveSetup/valveSetup
 import { WaterMeterGroupModule } from './units/oldSystems/pumps/waterMeterGroup/waterMeterGroup.module';
 import { WaterMeterModules } from './units/oldSystems/pumps/waterMeterLogs/waterMeterLogs.module';
 import { WaterMeterSetupModule } from './units/oldSystems/pumps/waterMeterSetup/waterMeterSetup.module';
+import { OldSystemManuelInstallModule } from './units/oldSystems/manuelInstallation/manuelInstallation.module';
 
 @Module({
   imports: [
@@ -179,6 +180,9 @@ import { WaterMeterSetupModule } from './units/oldSystems/pumps/waterMeterSetup/
     WaterMeterGroupModule,
     WaterMeterModules,
     WaterMeterSetupModule,
+
+    // OLD SYSTEM MANUEL INSTALLATION
+    OldSystemManuelInstallModule,
   ],
   controllers: [AppController],
   providers: [AppService],
