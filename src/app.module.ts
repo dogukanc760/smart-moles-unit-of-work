@@ -47,6 +47,33 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { ManuelValveWorkerModule } from './operations/smartCapillarity/ManuelWorker/ManuelValveWorker.module';
 import { SystemInstallationModules } from './units/ManuelSystemInstallation/systemInstallation.module';
 import { SmartRootClassificationModule } from './units/smartRoot/smartRootClassification/smartRootClassification.module';
+import { HubModule } from './units/oldSystems/hubs/hub.module';
+import { HubDateHourModule } from './units/oldSystems/hubs/hubDateHour/hubDateHour.module';
+import { HubGroupLogsModule } from './units/oldSystems/hubs/hubGroupLogs/hubGroupsLogs.module';
+import { HubGroupsModule } from './units/oldSystems/hubs/hubGroups/hubGroups.module';
+import { HubLogsModule } from './units/oldSystems/hubs/hubLogs/hubLogs.module';
+import { HubSetupModule } from './units/oldSystems/hubs/hubSetup/hubSetup.module';
+import { KhasSetupByHubModule } from './units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.module';
+import { MoistureSetupByHubModule } from './units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.module';
+import { KhasSetupModule } from './units/oldSystems/khas/khasSetup.module';
+import { LastKhasValueModule } from './units/oldSystems/khas/lastKhasValue/lastKhasValue.module';
+import { MoistureConditionsModule } from './units/oldSystems/khas/moistureConditions/moistureConditions.module';
+import { SmartCapillarityModule } from './units/oldSystems/khas/smartCapillarity/smartCapillarity.module';
+import { SmartCapillarityLogsModule } from './units/oldSystems/khas/smartCapillarityLogs/smartCapillarityLogs.module';
+import { PressureSensorGroupsModule } from './units/oldSystems/pumps/pressureSensor/pressureSensorGroup.module';
+import { PressureSensorLogsModule } from './units/oldSystems/pumps/pressureSensorLogs/pressureSensorsLogs.module';
+import { PressureSensorParamsModule } from './units/oldSystems/pumps/pressureSensorParams/pressureSensorParams.module';
+import { PressureSensorSetupModule } from './units/oldSystems/pumps/pressureSensorSetup/pressureSensorSetup.module';
+import { PumpLogsModule } from './units/oldSystems/pumps/pumpLogs/pumpLogs.module';
+import { PumpSetupModule } from './units/oldSystems/pumps/pumpSetup/pumpSetup.module';
+import { TParamatersByValveModule } from './units/oldSystems/pumps/tParametersByValve/tParamatersByValve.module';
+import { ValveCardGroupModule } from './units/oldSystems/pumps/valveCardGroup/valveCardGroup.module';
+import { ValveConditionModule } from './units/oldSystems/pumps/valveCondition/valveCondition.module';
+import { ValveSetupModule } from './units/oldSystems/pumps/valveSetup/valveSetup.module';
+import { WaterMeterGroupModule } from './units/oldSystems/pumps/waterMeterGroup/waterMeterGroup.module';
+import { WaterMeterModules } from './units/oldSystems/pumps/waterMeterLogs/waterMeterLogs.module';
+import { WaterMeterSetupModule } from './units/oldSystems/pumps/waterMeterSetup/waterMeterSetup.module';
+import { OldSystemManuelInstallModule } from './units/oldSystems/manuelInstallation/manuelInstallation.module';
 
 @Module({
   imports: [
@@ -120,6 +147,42 @@ import { SmartRootClassificationModule } from './units/smartRoot/smartRootClassi
     //Valves
     ValveCardsModule,
     ValveCardLogsModule,
+
+    /// <<<-------------------------OLD SYSTEMS ------------------------------>>> 
+    //Hubs Units
+    HubModule,
+    HubDateHourModule,
+    HubGroupLogsModule,
+    HubGroupsModule,
+    HubLogsModule,
+    HubSetupModule,
+    KhasSetupByHubModule,
+    MoistureSetupByHubModule,
+
+    //Khas List
+    KhasSetupModule,
+    LastKhasValueModule,
+    MoistureConditionsModule,
+    SmartCapillarityModule,
+    SmartCapillarityLogsModule,
+
+    //Pump List
+    PressureSensorGroupsModule,
+    PressureSensorLogsModule,
+    PressureSensorParamsModule,
+    PressureSensorSetupModule,
+    PumpLogsModule,
+    PumpSetupModule,
+    TParamatersByValveModule,
+    ValveCardGroupModule,
+    ValveConditionModule,
+    ValveSetupModule,
+    WaterMeterGroupModule,
+    WaterMeterModules,
+    WaterMeterSetupModule,
+
+    // OLD SYSTEM MANUEL INSTALLATION
+    OldSystemManuelInstallModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -13,12 +13,14 @@ import { Repository } from 'typeorm';
 import { UsersDTO } from './users.dto';
 import { LoginUsersDTO } from './users.login.dto';
 import * as bcrypt from 'bcrypt';
-import { JwtService } from '@nestjs/jwt';
+
 import { resourceLimits } from 'worker_threads';
 import { AuthGuard } from '@nestjs/passport';
 import datasource from 'src/config/migration.config';
 import { RolesService } from './userClaims/roles/roles.service';
 import { PermissionsService } from './userClaims/permissions/permissions.service';
+import { JwtService } from '@nestjs/jwt';
+
 
 @Injectable()
 export class UsersService {

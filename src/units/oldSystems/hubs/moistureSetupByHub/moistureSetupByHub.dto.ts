@@ -1,13 +1,9 @@
-import { GatewayKhasConditions } from './../../../model/Gateway/gatewayKhasConditions.entity';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, IsBoolean } from 'class-validator';
-import { DevicesLocation } from 'src/model/ExternalUnits/devicesLocation.entity';
-import { Gateway } from 'src/model/Gateway/gateway.entity';
-import { isBoolean } from 'util';
+import { Hub } from 'src/model/OldSystem/Hub/hub.entity';
+import { MoistureSetupByHub } from 'src/model/OldSystem/Hub/moistureSetupByHub.entity';
 
-export class AutoInstallationDTO
-  implements Readonly<GatewayKhasConditionsDTO>
-{
+export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
   @ApiProperty({ required: false })
   contentId: string;
   @ApiProperty({ required: false })
@@ -16,38 +12,40 @@ export class AutoInstallationDTO
   updatedAt: Date;
   @ApiProperty({ required: false })
   lastChangedDateTime: Date;
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
-  GatewayID: string;
-  @ApiProperty()
+  HubId: string;
+  @ApiProperty({ required: false })
   @IsString()
-  PackageLenght: number;
-  @ApiProperty()
+  PackageLenght: string;
+  @ApiProperty({ required: false })
   @IsString()
   EepromAddress: string;
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
   Command: string;
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
-  ReadPeriod: string;
-  @ApiProperty()
+  ReadingPeriod: string;
+  @ApiProperty({ required: false })
   @IsString()
-  SendingType: string;
+  RecieveType: string;
+  
 
   @ApiProperty({ required: false })
   @IsBoolean()
   isDeleted: boolean;
 
-  public static from(dto: Partial<GatewayKhasConditionsDTO>) {
-    const it = new GatewayKhasConditionsDTO();
+  public static from(dto: Partial<MoistureSetupByHubDTO>) {
+    const it = new MoistureSetupByHubDTO();
     it.contentId = dto.contentId;
-    it.GatewayID = dto.GatewayID;
+
+    it.HubId = dto.HubId;
     it.PackageLenght = dto.PackageLenght;
-    it.EepromAddress = dto.EepromAddress;
+    it.EepromAddress = dto.EepromAddress; 
     it.Command = dto.Command;
-    it.ReadPeriod = dto.ReadPeriod;
-    it.SendingType = dto.SendingType;
+    it.ReadingPeriod = dto.ReadingPeriod;
+    it.RecieveType = dto.RecieveType;
 
     it.createdAt = dto.createdAt;
     it.updatedAt = dto.updatedAt;
@@ -56,16 +54,17 @@ export class AutoInstallationDTO
     return it;
   }
 
-  public static fromEntity(entity: GatewayKhasConditions) {
+  public static fromEntity(entity: MoistureSetupByHub) {
     return this.from({
       contentId: entity.ContentID,
-      GatewayID: entity.GatewayID,
+
+      HubId: entity.HubId,
       PackageLenght: entity.PackageLenght,
       EepromAddress: entity.EepromAddress,
       Command: entity.Command,
-      ReadPeriod: entity.ReadPeriod,
-      SendingType: entity.SendingType,
-    
+      ReadingPeriod: entity.ReadingPeriod,
+      RecieveType: entity.RecieveType,
+
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       lastChangedDateTime: entity.lastChangedDateTime,
@@ -73,14 +72,15 @@ export class AutoInstallationDTO
     });
   }
 
-  public static toEntity(dto: Partial<GatewayKhasConditionsDTO>) {
-    const givenData = new GatewayKhasConditions();
-    givenData.GatewayID = dto.GatewayID;
+  public static toEntity(dto: Partial<MoistureSetupByHubDTO>) {
+    const givenData = new MoistureSetupByHub();
+    
+    givenData.HubId = dto.HubId;
     givenData.PackageLenght = dto.PackageLenght;
     givenData.EepromAddress = dto.EepromAddress;
     givenData.Command = dto.Command;
-    givenData.ReadPeriod = dto.ReadPeriod;
-    givenData.SendingType = dto.SendingType;
+    givenData.ReadingPeriod = dto.ReadingPeriod;
+    givenData.RecieveType = dto.RecieveType;
 
     givenData.updatedAt = new Date();
     givenData.lastChangedDateTime = new Date();
