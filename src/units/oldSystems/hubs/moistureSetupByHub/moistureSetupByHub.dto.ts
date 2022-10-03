@@ -1,9 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString, IsBoolean } from 'class-validator';
 import { Hub } from 'src/model/OldSystem/Hub/hub.entity';
+<<<<<<<< HEAD:src/units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.dto.ts
 import { MoistureSetupByHub } from 'src/model/OldSystem/Hub/moistureSetupByHub.entity';
 
 export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
+========
+import { KhasSetupByHub } from 'src/model/OldSystem/Hub/khasSetupByHub.entity';
+import { KhasSetup } from 'src/model/OldSystem/Khas/khasSetup.entity';
+
+export class KhasSetupByHubDTO implements Readonly<KhasSetupByHubDTO> {
+>>>>>>>> e8fb743d221e6cf77665fdd8a80d2631a17fa6fe:src/units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.dto.ts
   @ApiProperty({ required: false })
   contentId: string;
   @ApiProperty({ required: false })
@@ -30,14 +37,22 @@ export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
   @ApiProperty({ required: false })
   @IsString()
   RecieveType: string;
+<<<<<<<< HEAD:src/units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.dto.ts
   
+========
+>>>>>>>> e8fb743d221e6cf77665fdd8a80d2631a17fa6fe:src/units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.dto.ts
 
   @ApiProperty({ required: false })
   @IsBoolean()
   isDeleted: boolean;
 
+<<<<<<<< HEAD:src/units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.dto.ts
   public static from(dto: Partial<MoistureSetupByHubDTO>) {
     const it = new MoistureSetupByHubDTO();
+========
+  public static from(dto: Partial<KhasSetupByHubDTO>) {
+    const it = new KhasSetupByHubDTO();
+>>>>>>>> e8fb743d221e6cf77665fdd8a80d2631a17fa6fe:src/units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.dto.ts
     it.contentId = dto.contentId;
 
     it.HubId = dto.HubId;
@@ -54,6 +69,7 @@ export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
     return it;
   }
 
+<<<<<<<< HEAD:src/units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.dto.ts
   public static fromEntity(entity: MoistureSetupByHub) {
     return this.from({
       contentId: entity.ContentID,
@@ -62,6 +78,16 @@ export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
       PackageLenght: entity.PackageLenght,
       EepromAddress: entity.EepromAddress,
       Command: entity.Command,
+========
+  public static fromEntity(entity: KhasSetupByHub) {
+    return this.from({
+      contentId: entity.ContentID,
+
+      Command: entity.Command,
+      EepromAddress: entity.EepromAddress,
+      HubId: entity.HubId,
+      PackageLenght: entity.PackageLenght,
+>>>>>>>> e8fb743d221e6cf77665fdd8a80d2631a17fa6fe:src/units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.dto.ts
       ReadingPeriod: entity.ReadingPeriod,
       RecieveType: entity.RecieveType,
 
@@ -72,9 +98,15 @@ export class MoistureSetupByHubDTO implements Readonly<MoistureSetupByHubDTO> {
     });
   }
 
+<<<<<<<< HEAD:src/units/oldSystems/hubs/moistureSetupByHub/moistureSetupByHub.dto.ts
   public static toEntity(dto: Partial<MoistureSetupByHubDTO>) {
     const givenData = new MoistureSetupByHub();
     
+========
+  public static toEntity(dto: Partial<KhasSetupByHubDTO>) {
+    const givenData = new KhasSetupByHub();
+
+>>>>>>>> e8fb743d221e6cf77665fdd8a80d2631a17fa6fe:src/units/oldSystems/hubs/khasSetupByHub/khasSetupByHub.dto.ts
     givenData.HubId = dto.HubId;
     givenData.PackageLenght = dto.PackageLenght;
     givenData.EepromAddress = dto.EepromAddress;
